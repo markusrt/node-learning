@@ -175,9 +175,9 @@ Validierungsregeln:
 
 | Endpunkt | Methode | Beschreibung |
 |---|---|---|
-| `/api/vorwaerts` | POST | Vorwärtskalkulation (komplett) |
-| `/api/rueckwaerts` | POST | Rückwärtskalkulation |
-| `/api/differenz` | POST | Differenzkalkulation |
+| `/api/forward` | POST | Vorwärtskalkulation (komplett) |
+| `/api/backward` | POST | Rückwärtskalkulation |
+| `/api/difference` | POST | Differenzkalkulation |
 
 Jeder Endpunkt:
 1. Empfängt JSON-Body mit Eingabedaten
