@@ -6,21 +6,26 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
 
 ## Aufgaben
 
-- [ ] 1. Meilenstein 0: Projektstruktur aufsetzen (v0-projektstart)
-  - [ ] 1.1 Erstelle die Projektstruktur mit `backend/` und `frontend/` Ordnern
+- [x] 1. Meilenstein 0: Projektstruktur aufsetzen (v0-projektstart)
+  - [x] 1.1 Erstelle die Projektstruktur mit `backend/` und `frontend/` Ordnern
     - Erstelle `backend/package.json` mit Express, cors als Abhängigkeiten und Vitest, fast-check als Dev-Abhängigkeiten
     - Erstelle `backend/src/server.js` mit einem minimalen Express-Server (Port 3001)
     - Erstelle `frontend/` mit Vite + React via `npm create vite@latest` Konfiguration
     - Erstelle eine `README.md` mit Anleitung: Was muss installiert werden (Node.js, npm, Git, VS Code), wie startet man das Projekt
-    - Erstelle `docs/meilenstein-0.md` als Anleitung mit: Schritt-für-Schritt-Installationsanleitung, Mini-Glossar der neuen Konzepte (Terminal/Kommandozeile, Node.js, npm, Git, Repository, VS Code) jeweils mit kurzer Erklärung und weiterführendem Link
+    - Erstelle `docs/meilenstein-0.md` als Anleitung mit: Schritt-für-Schritt-Installationsanleitung, Verweis auf das zentrale Glossar mit Liste der neuen Begriffe, Abschnitt „Was hat sich im Code geändert?" mit Dateiübersicht und Erklärung der neuen/geänderten Dateien
+    - Erstelle `docs/glossar.md` als zentrales Glossar (alphabetisch sortiert) mit den Begriffen dieses Meilensteins: Abhängigkeit, Backend, Build-Tool, CSS, Express, Frontend, Git, JSON, LTS, Middleware, Node.js, npm, package.json, Port, Proxy, React, Repository, Server, Terminal, Vite, VS Code
+    - Erstelle `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 0 ✅), Vorschau auf Meilenstein 1 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 9.1, 9.4, 9.5_
 
 - [ ] 2. Meilenstein 1: Backend-Grundgerüst (v1-backend-grundgeruest)
   - [ ] 2.1 Erstelle den Express-Server mit Test-Endpunkt
     - Erstelle `backend/src/server.js` mit Express, cors-Middleware und JSON-Body-Parser
     - Erstelle einen GET-Endpunkt `/api/status` der `{ "status": "ok" }` zurückgibt
-    - Erstelle `backend/src/routes.js` mit dem Router-Grundgerüst (leere POST-Endpunkte für `/api/vorwaerts`, `/api/rueckwaerts`, `/api/differenz`)
-    - Erstelle `docs/meilenstein-1.md` als Anleitung mit: Erklärung was ein Server ist und wie Express funktioniert, Mini-Glossar (Server, HTTP, Request, Response, Port, Middleware, JSON, REST-API) jeweils mit kurzer Erklärung und weiterführendem Link, Mermaid-Diagramm das den Request-Response-Zyklus zeigt (Browser → Server → Antwort)
+    - Erstelle `backend/src/routes.js` mit dem Router-Grundgerüst (POST-Endpunkte für `/api/forward`, `/api/backward`, `/api/difference` die HTTP 501 mit `{ "message": "Noch nicht implementiert" }` zurückgeben)
+    - Teste die Endpunkte manuell mit `curl` oder im Browser (Status-Endpunkt: 200 OK, Kalkulations-Endpunkte: 501 Not Implemented)
+    - Erstelle `docs/meilenstein-1.md` als Anleitung mit: Erklärung was ein Server ist und wie Express funktioniert, Verweis auf das zentrale Glossar mit Liste der neuen Begriffe, Mermaid-Diagramm das den Request-Response-Zyklus zeigt (Browser → Server → Antwort), Abschnitt „Was hat sich im Code geändert?" mit Dateiübersicht und Erklärung der neuen/geänderten Dateien
+    - Erweitere `docs/glossar.md` (alphabetisch sortiert) um neue Begriffe: Endpunkt, HTTP, Request, Response, REST-API, Router, Statuscode
+    - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 1 ✅), Vorschau auf Meilenstein 2 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 6.4, 9.4, 9.6_
 
 - [ ] 3. Meilenstein 2: Einkaufskalkulation Backend (v2-einkaufskalkulation)
@@ -28,7 +33,9 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Erstelle `backend/src/calculation.js` mit der Funktion `calculateForward(input)` — zunächst nur den Einkaufsteil (Listeneinkaufspreis → Bezugspreis)
     - Implementiere `roundToTwo(value)` Hilfsfunktion
     - Implementiere die Formeln: Zieleinkaufspreis = Listeneinkaufspreis × (1 - Rabatt/100), Bareinkaufspreis = Zieleinkaufspreis × (1 - Skonto/100), Bezugspreis = Bareinkaufspreis + Bezugskosten
-    - Erstelle `docs/meilenstein-2.md` als Anleitung mit: Erklärung der Kalkulationsformeln und wie man Funktionen schreibt, Mini-Glossar (Funktion, Parameter, Rückgabewert, Modul, export/require, Variable, const/let, Datentyp Number) jeweils mit kurzer Erklärung und weiterführendem Link, Mermaid-Flussdiagramm der Einkaufskalkulation (Listeneinkaufspreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis)
+    - Erstelle `docs/meilenstein-2.md` als Anleitung mit: Erklärung der Kalkulationsformeln und wie man Funktionen schreibt, Verweis auf das zentrale Glossar mit Liste der neuen Begriffe, Mermaid-Flussdiagramm der Einkaufskalkulation (Listeneinkaufspreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis), Abschnitt „Was hat sich im Code geändert?" mit Dateiübersicht und Erklärung der neuen/geänderten Dateien
+    - Erweitere `docs/glossar.md` (alphabetisch sortiert) um neue Begriffe: const/let, Datentyp Number, Funktion, Modul, Parameter, require/module.exports, Rückgabewert, Variable
+    - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 2 ✅), Vorschau auf Meilenstein 3 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 1.1, 1.2, 6.2_
 
   - [ ] 3.2 Schreibe Unit-Tests für die Einkaufskalkulation
@@ -42,7 +49,9 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Implementiere: Selbstkostenpreis = Bezugspreis × (1 + HKZ/100), Barverkaufspreis = Selbstkostenpreis × (1 + Gewinn/100)
     - Implementiere Hundert-im-Hundert-Rechnung: Zielverkaufspreis = Barverkaufspreis / (1 - Skonto/100), Listenverkaufspreis = Zielverkaufspreis / (1 - Rabatt/100)
     - Baue das `steps`-Array mit allen 15 Schritten (deutsche Labels) auf
-    - Erstelle `docs/meilenstein-3.md` als Anleitung mit: Erklärung der Hundert-im-Hundert-Rechnung und warum Division statt Multiplikation, Mini-Glossar (Array, Objekt/Object, Hundert-im-Hundert-Rechnung, Unit-Test, Testframework, Assertion) jeweils mit kurzer Erklärung und weiterführendem Link, Mermaid-Diagramm des vollständigen Kalkulationsschemas (Listeneinkaufspreis → ... → Listenverkaufspreis) mit Rückwärtskalkulation als umgekehrtem Pfad
+    - Erstelle `docs/meilenstein-3.md` als Anleitung mit: Erklärung der Hundert-im-Hundert-Rechnung und warum Division statt Multiplikation, Verweis auf das zentrale Glossar mit Liste der neuen Begriffe, Mermaid-Diagramm des vollständigen Kalkulationsschemas (Listeneinkaufspreis → ... → Listenverkaufspreis) mit Rückwärtskalkulation als umgekehrtem Pfad, Abschnitt „Was hat sich im Code geändert?" mit Dateiübersicht und Erklärung der neuen/geänderten Dateien
+    - Erweitere `docs/glossar.md` (alphabetisch sortiert) um neue Begriffe: Array, Assertion, Hundert-im-Hundert-Rechnung, Objekt/Object, Property-Based Test, Testframework, Unit-Test
+    - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 3 ✅), Vorschau auf Meilenstein 4 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 2.1, 2.3, 3.1_
 
   - [ ] 4.2 Implementiere die Rückwärtskalkulation
@@ -94,7 +103,9 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
   - [ ] 6.1 Erstelle die React-App mit Navigation
     - Erstelle `frontend/src/App.jsx` mit einer einfachen Tab-Navigation (Vorwärtskalkulation, Rückwärtskalkulation, Differenzkalkulation)
     - Erstelle `frontend/src/App.css` mit einfachem, sauberem Styling
-    - Erstelle `docs/meilenstein-4.md` als Anleitung mit: Erklärung was React ist und wie Komponenten funktionieren, Mini-Glossar (React, Komponente, JSX, Props, State, useState, Vite, Build-Tool, CSS, Selektor) jeweils mit kurzer Erklärung und weiterführendem Link, Mermaid-Diagramm der Komponentenstruktur (App → Navigation → Seiten → Formular/Tabelle)
+    - Erstelle `docs/meilenstein-4.md` als Anleitung mit: Erklärung was React ist und wie Komponenten funktionieren, Verweis auf das zentrale Glossar mit Liste der neuen Begriffe, Mermaid-Diagramm der Komponentenstruktur (App → Navigation → Seiten → Formular/Tabelle), Abschnitt „Was hat sich im Code geändert?" mit Dateiübersicht und Erklärung der neuen/geänderten Dateien
+    - Erweitere `docs/glossar.md` (alphabetisch sortiert) um neue Begriffe: JSX, Komponente, Props, Selektor (CSS), State, useState
+    - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 4 ✅), Vorschau auf Meilenstein 5 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 7.1, 9.6_
 
   - [ ] 6.2 Erstelle die wiederverwendbaren Komponenten
@@ -111,32 +122,36 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
 - [ ] 7. Meilenstein 5: Vorwärtskalkulation komplett (v5-vorwaerts-komplett)
   - [ ] 7.1 Erstelle die Vorwärtskalkulation-Seite
     - Erstelle `frontend/src/pages/ForwardPage.jsx` mit Formular (8 Eingabefelder) und Ergebnis-Tabelle
-    - Verbinde das Formular mit dem Backend-Endpunkt `/api/vorwaerts`
+    - Verbinde das Formular mit dem Backend-Endpunkt `/api/forward`
     - Zeige das Ergebnis in der `ResultTable`-Komponente an
-    - Erstelle `docs/meilenstein-5.md` als Anleitung mit: Erklärung von fetch und async/await und wie Frontend und Backend zusammenarbeiten, Mini-Glossar (fetch, Promise, async/await, Proxy, Event-Handler, onSubmit, preventDefault) jeweils mit kurzer Erklärung und weiterführendem Link, Mermaid-Sequenzdiagramm des Datenflusses (Benutzer → Formular → fetch → Express → Berechnung → JSON → Tabelle)
+    - Erstelle `docs/meilenstein-5.md` als Anleitung mit: Erklärung von fetch und async/await und wie Frontend und Backend zusammenarbeiten, Verweis auf das zentrale Glossar mit Liste der neuen Begriffe, Mermaid-Sequenzdiagramm des Datenflusses (Benutzer → Formular → fetch → Express → Berechnung → JSON → Tabelle), Abschnitt „Was hat sich im Code geändert?" mit Dateiübersicht und Erklärung der neuen/geänderten Dateien
+    - Erweitere `docs/glossar.md` (alphabetisch sortiert) um neue Begriffe: async/await, Event-Handler, fetch, onSubmit, preventDefault, Promise
+    - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 5 ✅), Vorschau auf Meilenstein 6 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 1.1, 1.2, 3.1, 3.2, 7.2, 7.3_
 
-  - [ ] 7.2 Verdrahte den Backend-Endpunkt `/api/vorwaerts`
+  - [ ] 7.2 Verdrahte den Backend-Endpunkt `/api/forward`
     - Implementiere den POST-Handler in `backend/src/routes.js` der `calculateForward` aufruft und das Ergebnis zurückgibt
     - _Requirements: 6.1, 6.4_
 
 - [ ] 8. Meilenstein 6: Rückwärtskalkulation komplett (v6-rueckwaerts)
   - [ ] 8.1 Erstelle die Rückwärtskalkulation-Seite
     - Erstelle `frontend/src/pages/BackwardPage.jsx` mit Formular und Ergebnis-Tabelle
-    - Verbinde mit Backend-Endpunkt `/api/rueckwaerts`
+    - Verbinde mit Backend-Endpunkt `/api/backward`
+    - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 6 ✅), Vorschau auf Meilenstein 7 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 4.1, 4.2, 7.2, 7.3_
 
-  - [ ] 8.2 Verdrahte den Backend-Endpunkt `/api/rueckwaerts`
+  - [ ] 8.2 Verdrahte den Backend-Endpunkt `/api/backward`
     - Implementiere den POST-Handler in `backend/src/routes.js`
     - _Requirements: 6.1, 6.4_
 
 - [ ] 9. Meilenstein 7: Differenzkalkulation komplett (v7-differenz)
   - [ ] 9.1 Erstelle die Differenzkalkulation-Seite
     - Erstelle `frontend/src/pages/DifferencePage.jsx` mit Formular und Ergebnis-Tabelle
-    - Verbinde mit Backend-Endpunkt `/api/differenz`
+    - Verbinde mit Backend-Endpunkt `/api/difference`
+    - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 7 ✅), Vorschau auf Meilenstein 8 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 5.1, 5.2, 7.2, 7.3_
 
-  - [ ] 9.2 Verdrahte den Backend-Endpunkt `/api/differenz`
+  - [ ] 9.2 Verdrahte den Backend-Endpunkt `/api/difference`
     - Implementiere den POST-Handler in `backend/src/routes.js`
     - _Requirements: 6.1, 6.4_
 
@@ -148,7 +163,9 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Erstelle `backend/src/validation.js` mit `validateInput(data, fields)` Funktion
     - Implementiere Regeln: Pflichtfelder, numerische Werte, keine negativen Beträge, Prozentwerte 0–100
     - Integriere die Validierung in alle drei Route-Handler (vor der Berechnung aufrufen, bei Fehler HTTP 400 zurückgeben)
-    - Erstelle `docs/meilenstein-8.md` als Anleitung mit: Erklärung was Validierung ist und warum sie im Backend stattfinden muss, Mini-Glossar (Validierung, HTTP-Statuscode 400/500, Fehlerbehandlung, try/catch, Bedingung/if-else) jeweils mit kurzer Erklärung und weiterführendem Link, Mermaid-Diagramm des Validierungsflusses (Eingabe → Frontend-Check → Backend-Validierung → Berechnung oder Fehler)
+    - Erstelle `docs/meilenstein-8.md` als Anleitung mit: Erklärung was Validierung ist und warum sie im Backend stattfinden muss, Verweis auf das zentrale Glossar mit Liste der neuen Begriffe, Mermaid-Diagramm des Validierungsflusses (Eingabe → Frontend-Check → Backend-Validierung → Berechnung oder Fehler), Abschnitt „Was hat sich im Code geändert?" mit Dateiübersicht und Erklärung der neuen/geänderten Dateien
+    - Erweitere `docs/glossar.md` (alphabetisch sortiert) um neue Begriffe: Bedingung/if-else, Fehlerbehandlung, HTTP-Statuscode 400/500, try/catch, Validierung
+    - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 8 ✅), Vorschau auf Meilenstein 9 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 1.3, 1.4, 6.3, 8.1, 8.2, 8.3, 8.4_
 
   - [ ] 11.2 Schreibe Unit-Tests für die Validierung
@@ -184,6 +201,7 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Aktualisiere `README.md` mit vollständiger Projektbeschreibung
     - Liste alle Meilensteine und Git-Tags auf
     - Beschreibe wie man das Projekt startet und testet
+    - Aktualisiere `docs/naechste-schritte.md` mit: Projekt ist fertig ✅, Ideen für Erweiterungen
     - _Requirements: 9.1, 9.4, 9.5, 9.6_
 
 - [ ] 13. Finaler Checkpoint — Alle Tests bestehen, Projekt ist vollständig
