@@ -44,8 +44,8 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Teste Edge-Case: Alle Prozentsätze = 0, Bezugskosten = 0
     - _Requirements: 1.1, 6.2_
 
-- [ ] 4. Meilenstein 3: Verkaufskalkulation Backend (v3-verkaufskalkulation)
-  - [ ] 4.1 Erweitere `calculateForward` um die Verkaufskalkulation
+- [x] 4. Meilenstein 3: Verkaufskalkulation Backend (v3-verkaufskalkulation)
+  - [x] 4.1 Erweitere `calculateForward` um die Verkaufskalkulation
     - Implementiere: Selbstkostenpreis = Bezugspreis × (1 + HKZ/100), Barverkaufspreis = Selbstkostenpreis × (1 + Gewinn/100)
     - Implementiere Hundert-im-Hundert-Rechnung: Zielverkaufspreis = Barverkaufspreis / (1 - Skonto/100), Listenverkaufspreis = Zielverkaufspreis / (1 - Rabatt/100)
     - Baue das `steps`-Array mit allen 15 Schritten (deutsche Labels) auf
@@ -54,45 +54,45 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 3 ✅), Vorschau auf Meilenstein 4 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 2.1, 2.3, 3.1_
 
-  - [ ] 4.2 Implementiere die Rückwärtskalkulation
+  - [x] 4.2 Implementiere die Rückwärtskalkulation
     - Erstelle `calculateBackward(input)` in `backend/src/calculation.js`
     - Implementiere die umgekehrten Formeln: Listenverkaufspreis → Listeneinkaufspreis
     - Baue das `steps`-Array in umgekehrter Reihenfolge auf
     - _Requirements: 4.1, 4.2_
 
-  - [ ] 4.3 Implementiere die Differenzkalkulation
+  - [x] 4.3 Implementiere die Differenzkalkulation
     - Erstelle `calculateDifference(input)` in `backend/src/calculation.js`
     - Berechne Einkaufsseite (→ Selbstkostenpreis) und Verkaufsseite (→ Barverkaufspreis)
     - Berechne Gewinn = Barverkaufspreis - Selbstkostenpreis und Gewinn% = (Gewinn / Selbstkostenpreis) × 100
     - _Requirements: 5.1, 5.2_
 
-  - [ ] 4.4 Schreibe Unit-Tests für Verkaufs-, Rückwärts- und Differenzkalkulation
+  - [x] 4.4 Schreibe Unit-Tests für Verkaufs-, Rückwärts- und Differenzkalkulation
     - Teste Vorwärtskalkulation komplett mit bekanntem Beispiel
     - Teste Rückwärtskalkulation mit bekanntem Beispiel
     - Teste Differenzkalkulation mit bekanntem Beispiel
     - _Requirements: 2.1, 4.1, 5.1_
 
-  - [ ] 4.5 Schreibe Property-Test: Round-Trip Vorwärts/Rückwärts
+  - [x] 4.5 Schreibe Property-Test: Round-Trip Vorwärts/Rückwärts
     - **Property 1: Round-Trip Vorwärts-/Rückwärtskalkulation**
     - **Validates: Requirements 1.1, 2.1, 3.1, 4.1**
 
-  - [ ] 4.6 Schreibe Property-Test: Hundert-im-Hundert-Rechnung
+  - [x] 4.6 Schreibe Property-Test: Hundert-im-Hundert-Rechnung
     - **Property 2: Hundert-im-Hundert-Rechnung für Skonto und Rabatt**
     - **Validates: Requirements 2.3**
 
-  - [ ] 4.7 Schreibe Property-Test: Differenzkalkulation Gewinn
+  - [x] 4.7 Schreibe Property-Test: Differenzkalkulation Gewinn
     - **Property 3: Differenzkalkulation Gewinnberechnung**
     - **Validates: Requirements 5.1**
 
-  - [ ] 4.8 Schreibe Property-Test: Rundung auf zwei Nachkommastellen
+  - [x] 4.8 Schreibe Property-Test: Rundung auf zwei Nachkommastellen
     - **Property 4: Rundung auf zwei Nachkommastellen**
     - **Validates: Requirements 6.2**
 
-  - [ ] 4.9 Schreibe Property-Test: Ergebnis enthält alle Schritte
+  - [x] 4.9 Schreibe Property-Test: Ergebnis enthält alle Schritte
     - **Property 8: Ergebnis enthält alle erwarteten Schritte**
     - **Validates: Requirements 1.2, 2.2, 4.2**
 
-  - [ ] 4.10 Schreibe Property-Test: JSON Round-Trip
+  - [x] 4.10 Schreibe Property-Test: JSON Round-Trip
     - **Property 7: JSON-Serialisierung Round-Trip**
     - **Validates: Requirements 10.1, 10.2, 10.3**
 
