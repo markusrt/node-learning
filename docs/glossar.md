@@ -26,11 +26,25 @@ Ein Programm, das deinen Quellcode für den Browser vorbereitet. Es bündelt Dat
 
 ## C
 
+### const/let `Meilenstein 2`
+
+Schlüsselwörter in JavaScript, um Variablen zu erstellen. `const` erstellt eine Variable, deren Wert sich nicht mehr ändern darf (Konstante). `let` erstellt eine Variable, die später einen neuen Wert bekommen kann. Faustregel: Verwende immer `const`, es sei denn, du musst den Wert später ändern — dann nimm `let`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/const)
+
 ### CSS (Cascading Style Sheets) `Meilenstein 0`
 
 Eine Sprache, mit der du das Aussehen von Webseiten gestaltest — Farben, Schriftarten, Abstände, Layouts. CSS-Regeln werden in `.css`-Dateien geschrieben und vom Browser angewendet.
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Learn/CSS/First_steps/What_is_CSS)
+
+## D
+
+### Datentyp Number `Meilenstein 2`
+
+In JavaScript gibt es verschiedene Datentypen. `Number` ist der Typ für Zahlen — egal ob Ganzzahlen (42) oder Dezimalzahlen (3.14). JavaScript unterscheidet nicht zwischen ganzen Zahlen und Kommazahlen, alles ist ein `Number`. Achtung: Dezimalzahlen können Rundungsfehler haben (z.B. `0.1 + 0.2` ergibt `0.30000000000000004`), deshalb runden wir in der Kalkulation immer auf zwei Nachkommastellen.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Number)
 
 ## E
 
@@ -53,6 +67,12 @@ Ein Web-Framework für Node.js, das es einfach macht, einen Server zu bauen. Exp
 Der Teil einer Webanwendung, den der Benutzer im Browser sieht und mit dem er interagiert — Formulare, Buttons, Tabellen. In unserem Projekt ist das Frontend eine React-App, die mit Vite gebaut wird.
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer)
+
+### Funktion (Function) `Meilenstein 2`
+
+Ein wiederverwendbarer Code-Block, der einen Namen hat, Eingaben (Parameter) entgegennimmt und ein Ergebnis (Rückgabewert) zurückgibt. Funktionen helfen, Code übersichtlich zu halten und Wiederholungen zu vermeiden. In JavaScript definiert man sie mit dem Schlüsselwort `function`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Functions)
 
 ## G
 
@@ -94,6 +114,12 @@ Code, der bei jeder Anfrage an den Server automatisch ausgeführt wird, bevor di
 
 → [Mehr erfahren (Express Docs)](https://expressjs.com/de/guide/using-middleware.html)
 
+### Modul (Module) `Meilenstein 2`
+
+Eine JavaScript-Datei, die Funktionen oder Werte exportiert, damit andere Dateien sie verwenden können. Module helfen, den Code in kleine, übersichtliche Einheiten aufzuteilen. In Node.js exportiert man mit `module.exports` und importiert mit `require()`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Modules)
+
 ## N
 
 ### Node.js `Meilenstein 0`
@@ -109,6 +135,12 @@ Ein Paketmanager für JavaScript. Damit kannst du fertige Code-Pakete (Bibliothe
 → [Mehr erfahren (npmjs.com)](https://docs.npmjs.com/about-npm)
 
 ## P
+
+### Parameter `Meilenstein 2`
+
+Ein Platzhalter in einer Funktionsdefinition, der beim Aufruf der Funktion einen konkreten Wert erhält. Parameter stehen in den runden Klammern nach dem Funktionsnamen: `function roundToTwo(value)` — hier ist `value` der Parameter. Beim Aufruf `roundToTwo(3.456)` bekommt `value` den Wert `3.456`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Glossary/Parameter)
 
 ### package.json `Meilenstein 0`
 
@@ -142,6 +174,12 @@ Ein Projektordner, der von Git verwaltet wird. Es enthält deinen Code und die g
 
 → [Mehr erfahren (GitHub Docs)](https://docs.github.com/de/repositories/creating-and-managing-repositories/about-repositories)
 
+### require/module.exports `Meilenstein 2`
+
+Das Import/Export-System von Node.js (CommonJS). Mit `module.exports = { meineFunction }` machst du eine Funktion für andere Dateien verfügbar. Mit `const { meineFunction } = require('./datei')` importierst du sie in einer anderen Datei. So können Module miteinander kommunizieren.
+
+→ [Mehr erfahren (Node.js Docs)](https://nodejs.org/api/modules.html#modules-commonjs-modules)
+
 ### Request (Anfrage) `Meilenstein 1`
 
 Eine Nachricht, die der Browser (oder ein anderes Programm) an den Server schickt. Ein Request enthält die URL (wohin), die Methode (GET, POST, etc.) und optional Daten (z.B. Formulareingaben als JSON). Der Server verarbeitet den Request und schickt eine Response zurück.
@@ -166,6 +204,12 @@ Ein Modul in Express, das eingehende Anfragen an die richtige Funktion weiterlei
 
 → [Mehr erfahren (Express Docs)](https://expressjs.com/de/guide/routing.html)
 
+### Rückgabewert (Return Value) `Meilenstein 2`
+
+Das Ergebnis, das eine Funktion mit dem Schlüsselwort `return` zurückgibt. Der Rückgabewert kann eine Zahl, ein Text, ein Objekt oder jeder andere Datentyp sein. Beispiel: `return Math.round(value * 100) / 100;` gibt eine gerundete Zahl zurück.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Learn/JavaScript/Building_blocks/Return_values)
+
 ## S
 
 ### Server `Meilenstein 0`
@@ -189,6 +233,12 @@ Ein Textfenster, in dem du Befehle eingeben kannst, um Programme zu starten, Dat
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line)
 
 ## V
+
+### Variable `Meilenstein 2`
+
+Ein benannter Speicherplatz, in dem du einen Wert ablegen kannst. In JavaScript erstellst du Variablen mit `const` (unveränderlich) oder `let` (veränderlich). Beispiel: `const price = 100;` erstellt eine Variable namens `price` mit dem Wert `100`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Learn/JavaScript/First_steps/Variables)
 
 ### Vite `Meilenstein 0`
 
