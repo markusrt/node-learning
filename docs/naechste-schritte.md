@@ -2,75 +2,73 @@
 
 Diese Datei zeigt dir, wo du gerade stehst und was als Nächstes kommt. Nach jedem Meilenstein wird sie aktualisiert.
 
-## Aktueller Stand: Meilenstein 1 — Backend-Grundgerüst ✅
+## Aktueller Stand: Meilenstein 2 — Einkaufskalkulation ✅
 
-Du hast das Backend-Grundgerüst aufgebaut:
+Du hast die erste echte Berechnungslogik implementiert:
 
-- Express-Server mit cors-Middleware und JSON-Body-Parser
-- Router in eigener Datei (`routes.js`) mit sauberer Trennung
-- Status-Endpunkt `GET /api/status` gibt `{ "status": "ok" }` zurück
-- Drei Platzhalter-Endpunkte für die Kalkulationsarten (POST, HTTP 501)
-- Glossar um 7 neue Begriffe erweitert (Endpunkt, HTTP, Request, Response, REST-API, Router, Statuscode)
+- Kalkulationsmodul (`backend/src/calculation.js`) mit `roundToTwo()` und `calculateForward()`
+- Einkaufskalkulation berechnet: Listeneinkaufspreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis
+- Unit-Tests mit bekannten Beispielrechnungen und Edge-Cases
+- Glossar um 8 neue Begriffe erweitert (const/let, Datentyp Number, Funktion, Modul, Parameter, require/module.exports, Rückgabewert, Variable)
 
-## Nächster Schritt: Meilenstein 2 — Einkaufskalkulation
+## Nächster Schritt: Meilenstein 3 — Verkaufskalkulation
 
 ### Ziel
 
-Die erste echte Berechnungslogik wird implementiert: Die Einkaufskalkulation berechnet den Bezugspreis aus dem Listeneinkaufspreis. Dazu schreibst du deine erste JavaScript-Funktion mit Parametern und Rückgabewerten — und testest sie mit automatischen Tests.
+Die Berechnungslogik wird vervollständigt: Die Verkaufskalkulation berechnet den Listenverkaufspreis aus dem Bezugspreis. Außerdem kommen die Rückwärtskalkulation und die Differenzkalkulation dazu. Du lernst die „Hundert-im-Hundert-Rechnung" kennen und schreibst Property-Based Tests.
 
 ### Was du tun musst
 
-#### Schritt 1: Kalkulationsmodul erstellen (`backend/src/calculation.js`)
+#### Schritt 1: Verkaufskalkulation erweitern
 
-Erstelle eine neue Datei mit der Funktion `calculateForward(input)`. Zunächst implementierst du nur den Einkaufsteil:
+Erweitere `calculateForward()` um den Verkaufsteil:
 
 ```
-Listeneinkaufspreis
-- Liefererrabatt (% vom Listeneinkaufspreis)
-= Zieleinkaufspreis
-- Liefererskonto (% vom Zieleinkaufspreis)
-= Bareinkaufspreis
-+ Bezugskosten
-= Bezugspreis
+Bezugspreis
++ Handlungskostenzuschlag (% vom Bezugspreis)
+= Selbstkostenpreis
++ Gewinnzuschlag (% vom Selbstkostenpreis)
+= Barverkaufspreis
++ Kundenskonto → Zielverkaufspreis (Hundert-im-Hundert!)
++ Kundenrabatt → Listenverkaufspreis (Hundert-im-Hundert!)
 ```
 
-#### Schritt 2: Hilfsfunktion für Rundung
+#### Schritt 2: Rückwärtskalkulation
 
-Erstelle eine Funktion `roundToTwo(value)`, die Werte auf zwei Nachkommastellen rundet. Diese wird in allen Berechnungen verwendet.
+Erstelle `calculateBackward()` — die umgekehrte Richtung: Vom Listenverkaufspreis zurück zum Listeneinkaufspreis.
 
-#### Schritt 3: Unit-Tests schreiben (`backend/tests/calculation.test.js`)
+#### Schritt 3: Differenzkalkulation
 
-Schreibe Tests mit bekannten Beispielrechnungen, um sicherzustellen, dass die Formeln korrekt sind.
+Erstelle `calculateDifference()` — berechnet den Gewinn bei gegebenem Einkaufs- und Verkaufspreis.
 
-#### Schritt 4: Dokumentation
+#### Schritt 4: Tests
 
-- Erstelle `docs/meilenstein-2.md` mit Erklärung der Kalkulationsformeln
-- Erweitere das Glossar um neue Begriffe (Funktion, Variable, Parameter, etc.)
+Schreibe Unit-Tests und Property-Based Tests für alle drei Kalkulationsarten.
 
 ### Welche Dateien werden verändert?
 
 | Datei | Status | Beschreibung |
 |-------|--------|-------------|
-| `backend/src/calculation.js` | Neu | Einkaufskalkulationslogik |
-| `backend/tests/calculation.test.js` | Neu | Unit-Tests für die Berechnung |
-| `docs/meilenstein-2.md` | Neu | Anleitung für diesen Meilenstein |
-| `docs/glossar.md` | Erweitert | Neue Begriffe (Funktion, Variable, etc.) |
-| `docs/naechste-schritte.md` | Aktualisiert | Vorschau auf Meilenstein 3 |
+| `backend/src/calculation.js` | Erweitert | Verkaufs-, Rückwärts- und Differenzkalkulation |
+| `backend/tests/calculation.test.js` | Erweitert | Unit-Tests für alle Kalkulationsarten |
+| `backend/tests/calculation.prop.test.js` | Neu | Property-Based Tests |
+| `docs/meilenstein-3.md` | Neu | Anleitung für diesen Meilenstein |
+| `docs/glossar.md` | Erweitert | Neue Begriffe (Array, Assertion, etc.) |
+| `docs/naechste-schritte.md` | Aktualisiert | Vorschau auf Meilenstein 4 |
 
 ### Neue Konzepte
 
 | Konzept | Kurz erklärt |
 |---------|-------------|
-| Funktion | Ein wiederverwendbarer Code-Block mit Namen, Parametern und Rückgabewert |
-| Variable | Ein benannter Speicherplatz für Werte (`const`, `let`) |
-| Modul | Eine Datei, die Funktionen exportiert und von anderen Dateien importiert werden kann |
-| Unit-Test | Ein automatischer Test, der prüft ob eine einzelne Funktion korrekt arbeitet |
+| Hundert-im-Hundert-Rechnung | Division statt Multiplikation bei Skonto/Rabatt auf der Verkaufsseite |
+| Array | Eine geordnete Liste von Werten |
+| Property-Based Test | Ein Test, der universelle Eigenschaften über viele zufällige Eingaben prüft |
+| Unit-Test | Ein Test, der ein spezifisches Beispiel prüft |
 
 ### Wie du startest
 
-1. Öffne das Projekt in VS Code
-2. Erstelle die Datei `backend/src/calculation.js`
-3. Implementiere `roundToTwo` und den Einkaufsteil von `calculateForward`
-4. Erstelle `backend/tests/calculation.test.js` und schreibe Tests
+1. Öffne `backend/src/calculation.js`
+2. Erweitere `calculateForward()` um den Verkaufsteil
+3. Implementiere `calculateBackward()` und `calculateDifference()`
+4. Schreibe Tests in `backend/tests/`
 5. Führe die Tests aus mit `cd backend && npm test`
-6. Wenn alle Tests grün sind: Git-Commit und weiter zur Dokumentation
