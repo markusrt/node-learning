@@ -34,6 +34,12 @@ Eine Sprache, mit der du das Aussehen von Webseiten gestaltest — Farben, Schri
 
 ## E
 
+### Endpunkt (Endpoint) `Meilenstein 1`
+
+Eine bestimmte URL auf dem Server, an die man Anfragen schicken kann. Jeder Endpunkt hat eine Adresse (z.B. `/api/status`) und reagiert auf eine bestimmte HTTP-Methode (GET, POST, etc.). Endpunkte sind die „Türen" deiner API.
+
+→ [Mehr erfahren (Express Docs)](https://expressjs.com/de/guide/routing.html)
+
 ### Express `Meilenstein 0`
 
 Ein Web-Framework für Node.js, das es einfach macht, einen Server zu bauen. Express stellt Funktionen bereit, um auf HTTP-Anfragen zu reagieren und Antworten zu schicken. Es ist das beliebteste Framework für Node.js-Server.
@@ -55,6 +61,14 @@ Der Teil einer Webanwendung, den der Benutzer im Browser sieht und mit dem er in
 Ein Versionsverwaltungssystem. Es speichert die Geschichte deines Codes, sodass du jederzeit zu einem früheren Stand zurückkehren kannst. Stell es dir vor wie „Speicherpunkte" in einem Spiel.
 
 → [Mehr erfahren (git-scm.com)](https://git-scm.com/book/de/v2/Erste-Schritte-Was-ist-Versionsverwaltung%3F)
+
+## H
+
+### HTTP (Hypertext Transfer Protocol) `Meilenstein 1`
+
+Das Protokoll (die „Sprache"), über das Browser und Server miteinander kommunizieren. Wenn du eine Webseite aufrufst, schickt dein Browser einen HTTP-Request an den Server, und der Server antwortet mit einer HTTP-Response. Es gibt verschiedene Methoden: GET (Daten abrufen), POST (Daten senden), PUT (Daten ändern), DELETE (Daten löschen).
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/HTTP/Overview)
 
 ## J
 
@@ -128,6 +142,30 @@ Ein Projektordner, der von Git verwaltet wird. Es enthält deinen Code und die g
 
 → [Mehr erfahren (GitHub Docs)](https://docs.github.com/de/repositories/creating-and-managing-repositories/about-repositories)
 
+### Request (Anfrage) `Meilenstein 1`
+
+Eine Nachricht, die der Browser (oder ein anderes Programm) an den Server schickt. Ein Request enthält die URL (wohin), die Methode (GET, POST, etc.) und optional Daten (z.B. Formulareingaben als JSON). Der Server verarbeitet den Request und schickt eine Response zurück.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/HTTP/Messages)
+
+### Response (Antwort) `Meilenstein 1`
+
+Die Antwort, die der Server auf einen Request zurückschickt. Eine Response enthält einen Statuscode (z.B. 200 für OK), Header (Metadaten) und optional einen Body (z.B. JSON-Daten). Das Frontend wertet die Response aus und zeigt die Daten an.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/HTTP/Messages)
+
+### REST-API `Meilenstein 1`
+
+Ein Architekturmuster für Web-APIs. REST steht für „Representational State Transfer". Eine REST-API verwendet HTTP-Methoden (GET, POST, PUT, DELETE) und URLs, um Daten auszutauschen. In unserem Projekt hat die REST-API Endpunkte wie `/api/forward` und `/api/backward`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/en-US/docs/Glossary/REST)
+
+### Router `Meilenstein 1`
+
+Ein Modul in Express, das eingehende Anfragen an die richtige Funktion weiterleitet. Statt alle Routen in einer Datei zu definieren, kann man sie mit einem Router in eigene Dateien auslagern. Das hält den Code übersichtlich und wartbar.
+
+→ [Mehr erfahren (Express Docs)](https://expressjs.com/de/guide/routing.html)
+
 ## S
 
 ### Server `Meilenstein 0`
@@ -135,6 +173,12 @@ Ein Projektordner, der von Git verwaltet wird. Es enthält deinen Code und die g
 Ein Programm, das auf Anfragen wartet und Antworten zurückschickt. In unserem Projekt ist der Server ein Node.js-Programm mit Express, das auf Port 3001 läuft und Kalkulationen berechnet.
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server)
+
+### Statuscode `Meilenstein 1`
+
+Eine dreistellige Zahl in der HTTP-Response, die angibt, ob eine Anfrage erfolgreich war. Wichtige Statuscodes: 200 (OK — alles hat funktioniert), 400 (Bad Request — ungültige Eingabe), 404 (Not Found — URL nicht gefunden), 501 (Not Implemented — Funktion noch nicht programmiert), 500 (Server Error — unerwarteter Fehler).
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/HTTP/Status)
 
 ## T
 
