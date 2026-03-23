@@ -4,11 +4,23 @@ Dieses Glossar wird mit jedem Meilenstein erweitert. Neue Begriffe sind mit dem 
 
 ## A
 
+### Array `Meilenstein 3`
+
+Eine geordnete Liste von Werten in JavaScript. Ein Array wird mit eckigen Klammern erstellt: `const zahlen = [1, 2, 3]`. Jedes Element hat einen Index (Position), der bei 0 beginnt. In unserem Projekt verwenden wir Arrays für das `steps`-Array, das alle Berechnungsschritte enthält.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
 ### Abhängigkeit (Dependency) `Meilenstein 0`
 
 Ein externes Code-Paket, das dein Projekt braucht, um zu funktionieren. In der `package.json` stehen alle Abhängigkeiten aufgelistet. npm lädt sie automatisch herunter, wenn du `npm install` ausführst.
 
 → [Mehr erfahren (npm Docs)](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file)
+
+### Assertion (Behauptung) `Meilenstein 3`
+
+Eine Aussage in einem Test, die wahr sein muss, damit der Test besteht. Beispiel: `expect(result).toBe(93.2)` behauptet, dass `result` den Wert `93.2` hat. Wenn die Behauptung falsch ist, schlägt der Test fehl und zeigt dir, was schiefgelaufen ist.
+
+→ [Mehr erfahren (Vitest Docs)](https://vitest.dev/api/expect.html)
 
 ## B
 
@@ -84,6 +96,10 @@ Ein Versionsverwaltungssystem. Es speichert die Geschichte deines Codes, sodass 
 
 ## H
 
+### Hundert-im-Hundert-Rechnung `Meilenstein 3`
+
+Eine kaufmännische Rechenmethode, bei der man dividiert statt multipliziert. Sie wird bei der Verkaufskalkulation für Kundenskonto und Kundenrabatt verwendet. Der Grund: Der Prozentsatz bezieht sich auf den höheren Wert (z.B. Zielverkaufspreis), nicht auf den niedrigeren (Barverkaufspreis). Formel: `Zielverkaufspreis = Barverkaufspreis / (1 - Skontosatz/100)`.
+
 ### HTTP (Hypertext Transfer Protocol) `Meilenstein 1`
 
 Das Protokoll (die „Sprache"), über das Browser und Server miteinander kommunizieren. Wenn du eine Webseite aufrufst, schickt dein Browser einen HTTP-Request an den Server, und der Server antwortet mit einer HTTP-Response. Es gibt verschiedene Methoden: GET (Daten abrufen), POST (Daten senden), PUT (Daten ändern), DELETE (Daten löschen).
@@ -134,6 +150,14 @@ Ein Paketmanager für JavaScript. Damit kannst du fertige Code-Pakete (Bibliothe
 
 → [Mehr erfahren (npmjs.com)](https://docs.npmjs.com/about-npm)
 
+## O
+
+### Objekt/Object `Meilenstein 3`
+
+Ein Datentyp in JavaScript, der mehrere zusammengehörige Werte unter einem Namen speichert. Ein Objekt besteht aus Schlüssel-Wert-Paaren in geschweiften Klammern: `const person = { name: 'Max', alter: 15 }`. In unserem Projekt verwenden wir Objekte für die Eingabedaten und Ergebnisse der Kalkulation.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 ## P
 
 ### Parameter `Meilenstein 2`
@@ -159,6 +183,12 @@ Eine Nummer, über die ein Programm auf dem Computer erreichbar ist. Unser Backe
 Ein Vermittler, der Anfragen weiterleitet. In unserem Projekt leitet der Vite-Proxy alle Anfragen an `/api/...` automatisch an den Backend-Server auf Port 3001 weiter. So muss das Frontend nicht wissen, auf welchem Port das Backend läuft.
 
 → [Mehr erfahren (Vite Docs)](https://vite.dev/config/server-options.html#server-proxy)
+
+### Property-Based Test `Meilenstein 3`
+
+Ein Test, der nicht ein einzelnes Beispiel prüft, sondern eine universelle Eigenschaft über viele zufällig generierte Eingaben. Statt zu sagen „für Eingabe X erwarte ich Y", sagt man „für alle gültigen Eingaben muss Eigenschaft Z gelten". Die Bibliothek fast-check generiert automatisch hunderte Testfälle und sucht nach Gegenbeispielen.
+
+→ [Mehr erfahren (fast-check Docs)](https://fast-check.dev/docs/core-blocks/properties/)
 
 ## R
 
@@ -231,6 +261,20 @@ Eine dreistellige Zahl in der HTTP-Response, die angibt, ob eine Anfrage erfolgr
 Ein Textfenster, in dem du Befehle eingeben kannst, um Programme zu starten, Dateien zu verwalten oder Code auszuführen. Statt mit der Maus zu klicken, tippst du Befehle ein. In VS Code erreichst du es über `Strg + Ö`.
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line)
+
+### Testframework `Meilenstein 3`
+
+Eine Software-Bibliothek, die das Schreiben und Ausführen von Tests vereinfacht. Ein Testframework stellt Funktionen wie `describe()`, `it()` und `expect()` bereit, mit denen du Tests strukturieren und Ergebnisse prüfen kannst. In unserem Projekt verwenden wir Vitest als Testframework.
+
+→ [Mehr erfahren (Vitest Docs)](https://vitest.dev/guide/)
+
+## U
+
+### Unit-Test `Meilenstein 3`
+
+Ein Test, der eine einzelne Funktion oder ein kleines Code-Stück mit einem konkreten Beispiel prüft. Du gibst bekannte Eingabewerte vor und prüfst, ob das Ergebnis dem erwarteten Wert entspricht. Unit-Tests sind die einfachste Form von Tests und helfen, Fehler früh zu finden.
+
+→ [Mehr erfahren (Vitest Docs)](https://vitest.dev/guide/)
 
 ## V
 
