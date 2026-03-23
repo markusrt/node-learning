@@ -28,8 +28,8 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 1 ✅), Vorschau auf Meilenstein 2 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 6.4, 9.4, 9.6_
 
-- [ ] 3. Meilenstein 2: Einkaufskalkulation Backend (v2-einkaufskalkulation)
-  - [ ] 3.1 Implementiere die Einkaufskalkulationslogik
+- [x] 3. Meilenstein 2: Einkaufskalkulation Backend (v2-einkaufskalkulation)
+  - [x] 3.1 Implementiere die Einkaufskalkulationslogik
     - Erstelle `backend/src/calculation.js` mit der Funktion `calculateForward(input)` — zunächst nur den Einkaufsteil (Listeneinkaufspreis → Bezugspreis)
     - Implementiere `roundToTwo(value)` Hilfsfunktion
     - Implementiere die Formeln: Zieleinkaufspreis = Listeneinkaufspreis × (1 - Rabatt/100), Bareinkaufspreis = Zieleinkaufspreis × (1 - Skonto/100), Bezugspreis = Bareinkaufspreis + Bezugskosten
@@ -38,7 +38,7 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 2 ✅), Vorschau auf Meilenstein 3 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 1.1, 1.2, 6.2_
 
-  - [ ] 3.2 Schreibe Unit-Tests für die Einkaufskalkulation
+  - [x] 3.2 Schreibe Unit-Tests für die Einkaufskalkulation
     - Erstelle `backend/tests/calculation.test.js` mit bekannten Beispielrechnungen
     - Teste: Listeneinkaufspreis 100€, 10% Rabatt, 2% Skonto, 5€ Bezugskosten → Bezugspreis 93,20€
     - Teste Edge-Case: Alle Prozentsätze = 0, Bezugskosten = 0
