@@ -2,73 +2,68 @@
 
 Diese Datei zeigt dir, wo du gerade stehst und was als Nächstes kommt. Nach jedem Meilenstein wird sie aktualisiert.
 
-## Aktueller Stand: Meilenstein 2 — Einkaufskalkulation ✅
+## Aktueller Stand: Meilenstein 3 — Verkaufskalkulation ✅
 
-Du hast die erste echte Berechnungslogik implementiert:
+Du hast die komplette Berechnungslogik implementiert:
 
-- Kalkulationsmodul (`backend/src/calculation.js`) mit `roundToTwo()` und `calculateForward()`
-- Einkaufskalkulation berechnet: Listeneinkaufspreis → Zieleinkaufspreis → Bareinkaufspreis → Bezugspreis
-- Unit-Tests mit bekannten Beispielrechnungen und Edge-Cases
-- Glossar um 8 neue Begriffe erweitert (const/let, Datentyp Number, Funktion, Modul, Parameter, require/module.exports, Rückgabewert, Variable)
+- `calculateForward()` berechnet jetzt die vollständige Kalkulation (15 Schritte: Listeneinkaufspreis → Listenverkaufspreis)
+- `calculateBackward()` berechnet die Rückwärtskalkulation (Listenverkaufspreis → Listeneinkaufspreis)
+- `calculateDifference()` ermittelt den Gewinn bei gegebenem Einkaufs- und Verkaufspreis
+- Hundert-im-Hundert-Rechnung für Kundenskonto und Kundenrabatt
+- Unit-Tests und Property-Based Tests für alle drei Kalkulationsarten
+- Glossar um 7 neue Begriffe erweitert (Array, Assertion, Hundert-im-Hundert-Rechnung, Objekt/Object, Property-Based Test, Testframework, Unit-Test)
 
-## Nächster Schritt: Meilenstein 3 — Verkaufskalkulation
+## Nächster Schritt: Meilenstein 4 — Frontend-Grundgerüst
 
 ### Ziel
 
-Die Berechnungslogik wird vervollständigt: Die Verkaufskalkulation berechnet den Listenverkaufspreis aus dem Bezugspreis. Außerdem kommen die Rückwärtskalkulation und die Differenzkalkulation dazu. Du lernst die „Hundert-im-Hundert-Rechnung" kennen und schreibst Property-Based Tests.
+Jetzt bauen wir die Benutzeroberfläche! Du erstellst eine React-App mit Navigation und wiederverwendbaren Komponenten. Am Ende dieses Meilensteins kannst du zwischen den drei Kalkulationsarten wechseln und siehst die Formulare.
 
 ### Was du tun musst
 
-#### Schritt 1: Verkaufskalkulation erweitern
+#### Schritt 1: React-App mit Navigation
 
-Erweitere `calculateForward()` um den Verkaufsteil:
+Erstelle `App.jsx` mit einer Tab-Navigation für die drei Kalkulationsarten (Vorwärtskalkulation, Rückwärtskalkulation, Differenzkalkulation).
 
-```
-Bezugspreis
-+ Handlungskostenzuschlag (% vom Bezugspreis)
-= Selbstkostenpreis
-+ Gewinnzuschlag (% vom Selbstkostenpreis)
-= Barverkaufspreis
-+ Kundenskonto → Zielverkaufspreis (Hundert-im-Hundert!)
-+ Kundenrabatt → Listenverkaufspreis (Hundert-im-Hundert!)
-```
+#### Schritt 2: Wiederverwendbare Komponenten
 
-#### Schritt 2: Rückwärtskalkulation
+Erstelle Komponenten, die in allen drei Seiten verwendet werden:
+- `InputField.jsx` — Eingabefeld mit Label und Fehlermeldung
+- `ResultTable.jsx` — Tabelle zur Anzeige des `steps`-Arrays
+- `ErrorDisplay.jsx` — Anzeige von Backend-Fehlermeldungen
 
-Erstelle `calculateBackward()` — die umgekehrte Richtung: Vom Listenverkaufspreis zurück zum Listeneinkaufspreis.
+#### Schritt 3: API-Hilfsfunktion
 
-#### Schritt 3: Differenzkalkulation
-
-Erstelle `calculateDifference()` — berechnet den Gewinn bei gegebenem Einkaufs- und Verkaufspreis.
-
-#### Schritt 4: Tests
-
-Schreibe Unit-Tests und Property-Based Tests für alle drei Kalkulationsarten.
+Erstelle `api.js` mit einer Funktion, die Kalkulationsanfragen an das Backend sendet.
 
 ### Welche Dateien werden verändert?
 
 | Datei | Status | Beschreibung |
-|-------|--------|-------------|
-| `backend/src/calculation.js` | Erweitert | Verkaufs-, Rückwärts- und Differenzkalkulation |
-| `backend/tests/calculation.test.js` | Erweitert | Unit-Tests für alle Kalkulationsarten |
-| `backend/tests/calculation.prop.test.js` | Neu | Property-Based Tests |
-| `docs/meilenstein-3.md` | Neu | Anleitung für diesen Meilenstein |
-| `docs/glossar.md` | Erweitert | Neue Begriffe (Array, Assertion, etc.) |
-| `docs/naechste-schritte.md` | Aktualisiert | Vorschau auf Meilenstein 4 |
+| ----- | ------ | ------------ |
+| `frontend/src/App.jsx` | Erweitert | Navigation und Seitenstruktur |
+| `frontend/src/App.css` | Neu | Styling für die App |
+| `frontend/src/components/InputField.jsx` | Neu | Wiederverwendbares Eingabefeld |
+| `frontend/src/components/ResultTable.jsx` | Neu | Ergebnis-Tabelle |
+| `frontend/src/components/ErrorDisplay.jsx` | Neu | Fehleranzeige |
+| `frontend/src/api.js` | Neu | API-Hilfsfunktion |
+| `frontend/vite.config.js` | Erweitert | Proxy-Konfiguration |
+| `docs/meilenstein-4.md` | Neu | Anleitung für diesen Meilenstein |
+| `docs/glossar.md` | Erweitert | Neue Begriffe (JSX, Komponente, Props, State, etc.) |
 
 ### Neue Konzepte
 
 | Konzept | Kurz erklärt |
-|---------|-------------|
-| Hundert-im-Hundert-Rechnung | Division statt Multiplikation bei Skonto/Rabatt auf der Verkaufsseite |
-| Array | Eine geordnete Liste von Werten |
-| Property-Based Test | Ein Test, der universelle Eigenschaften über viele zufällige Eingaben prüft |
-| Unit-Test | Ein Test, der ein spezifisches Beispiel prüft |
+| ------- | ------------ |
+| JSX | HTML-ähnliche Syntax in JavaScript |
+| Komponente | Ein wiederverwendbarer Baustein der Benutzeroberfläche |
+| Props | Daten, die von einer Eltern-Komponente an eine Kind-Komponente übergeben werden |
+| State | Daten innerhalb einer Komponente, die sich ändern können |
+| useState | Ein React-Hook zum Verwalten von State |
 
 ### Wie du startest
 
-1. Öffne `backend/src/calculation.js`
-2. Erweitere `calculateForward()` um den Verkaufsteil
-3. Implementiere `calculateBackward()` und `calculateDifference()`
-4. Schreibe Tests in `backend/tests/`
-5. Führe die Tests aus mit `cd backend && npm test`
+1. Öffne `frontend/src/App.jsx`
+2. Erstelle die Navigation mit Tabs
+3. Erstelle die Komponenten in `frontend/src/components/`
+4. Erstelle `frontend/src/api.js`
+5. Starte das Frontend mit `cd frontend && npm run dev`
