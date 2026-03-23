@@ -2,103 +2,75 @@
 
 Diese Datei zeigt dir, wo du gerade stehst und was als Nächstes kommt. Nach jedem Meilenstein wird sie aktualisiert.
 
-## Aktueller Stand: Meilenstein 0 — Projektstruktur ✅
+## Aktueller Stand: Meilenstein 1 — Backend-Grundgerüst ✅
 
-Du hast die Grundstruktur des Projekts aufgesetzt:
+Du hast das Backend-Grundgerüst aufgebaut:
 
-- Backend mit Express-Server (läuft auf Port 3001)
-- Frontend mit React und Vite
-- Git-Repository ist eingerichtet
-- Zentrales Glossar unter `docs/glossar.md` angelegt
+- Express-Server mit cors-Middleware und JSON-Body-Parser
+- Router in eigener Datei (`routes.js`) mit sauberer Trennung
+- Status-Endpunkt `GET /api/status` gibt `{ "status": "ok" }` zurück
+- Drei Platzhalter-Endpunkte für die Kalkulationsarten (POST, HTTP 501)
+- Glossar um 7 neue Begriffe erweitert (Endpunkt, HTTP, Request, Response, REST-API, Router, Statuscode)
 
-## Nächster Schritt: Meilenstein 1 — Backend-Grundgerüst
+## Nächster Schritt: Meilenstein 2 — Einkaufskalkulation
 
 ### Ziel
 
-Das Backend bekommt eine richtige Struktur: Ein Router verteilt eingehende Anfragen an die richtigen Funktionen. Am Ende hast du drei API-Endpunkte (noch ohne Logik), die du im Browser oder Terminal testen kannst.
+Die erste echte Berechnungslogik wird implementiert: Die Einkaufskalkulation berechnet den Bezugspreis aus dem Listeneinkaufspreis. Dazu schreibst du deine erste JavaScript-Funktion mit Parametern und Rückgabewerten — und testest sie mit automatischen Tests.
 
 ### Was du tun musst
 
-#### Schritt 1: Router erstellen (`backend/src/routes.js`)
+#### Schritt 1: Kalkulationsmodul erstellen (`backend/src/calculation.js`)
 
-Erstelle eine neue Datei `backend/src/routes.js`. Der Router definiert, welche URL welche Funktion aufruft. Zunächst sind die drei Kalkulations-Endpunkte nur Platzhalter, die eine „Noch nicht implementiert"-Meldung zurückgeben.
+Erstelle eine neue Datei mit der Funktion `calculateForward(input)`. Zunächst implementierst du nur den Einkaufsteil:
 
-```javascript
-// Beispiel: So sieht ein Platzhalter-Endpunkt aus
-router.post('/forward', (req, res) => {
-  res.status(501).json({ message: 'Noch nicht implementiert' });
-});
+```
+Listeneinkaufspreis
+- Liefererrabatt (% vom Listeneinkaufspreis)
+= Zieleinkaufspreis
+- Liefererskonto (% vom Zieleinkaufspreis)
+= Bareinkaufspreis
++ Bezugskosten
+= Bezugspreis
 ```
 
-→ Mehr über Express-Router: [Express Routing Guide](https://expressjs.com/de/guide/routing.html)
+#### Schritt 2: Hilfsfunktion für Rundung
 
-#### Schritt 2: Server erweitern (`backend/src/server.js`)
+Erstelle eine Funktion `roundToTwo(value)`, die Werte auf zwei Nachkommastellen rundet. Diese wird in allen Berechnungen verwendet.
 
-Binde den neuen Router in den bestehenden Server ein. Der Server delegiert dann alle `/api/...`-Anfragen an den Router.
+#### Schritt 3: Unit-Tests schreiben (`backend/tests/calculation.test.js`)
 
-```javascript
-// So bindet man einen Router ein
-const routes = require('./routes');
-app.use('/api', routes);
-```
-
-→ Mehr über `app.use()`: [Express API Reference](https://expressjs.com/de/api.html#app.use)
-
-#### Schritt 3: Testen ob alles funktioniert
-
-Auch wenn die Endpunkte noch keine Berechnung durchführen, kannst du prüfen, ob sie erreichbar sind. Starte den Server und teste im Terminal:
-
-```bash
-# Server starten
-cd backend
-npm start
-
-# In einem neuen Terminal: Status-Endpunkt testen
-curl http://localhost:3001/api/status
-# Erwartete Antwort: {"status":"ok"}
-
-# Platzhalter-Endpunkt testen (POST-Request)
-curl -X POST http://localhost:3001/api/forward
-# Erwartete Antwort: {"message":"Noch nicht implementiert"} mit Status 501
-```
-
-Falls du `curl` nicht installiert hast, kannst du auch im Browser `http://localhost:3001/api/status` aufrufen.
-
-→ Mehr über curl: [curl Dokumentation](https://curl.se/docs/manual.html)
+Schreibe Tests mit bekannten Beispielrechnungen, um sicherzustellen, dass die Formeln korrekt sind.
 
 #### Schritt 4: Dokumentation
 
-- Erstelle `docs/meilenstein-1.md` mit einer Erklärung, was ein Server ist und wie Express funktioniert
-- Erweitere das [Glossar](glossar.md) um die neuen Begriffe (Endpunkt, HTTP, Request, Response, REST-API, Router, Statuscode)
+- Erstelle `docs/meilenstein-2.md` mit Erklärung der Kalkulationsformeln
+- Erweitere das Glossar um neue Begriffe (Funktion, Variable, Parameter, etc.)
 
 ### Welche Dateien werden verändert?
 
-| Datei | Was passiert |
-| ----- | ----------- |
-| `backend/src/server.js` | Wird erweitert: Router einbinden |
-| `backend/src/routes.js` | Neu: API-Endpunkte (Platzhalter) |
-| `docs/meilenstein-1.md` | Neu: Anleitung für diesen Meilenstein |
-| `docs/glossar.md` | Erweitert: 7 neue Begriffe |
-| `docs/naechste-schritte.md` | Aktualisiert: Vorschau auf Meilenstein 2 |
+| Datei | Status | Beschreibung |
+|-------|--------|-------------|
+| `backend/src/calculation.js` | Neu | Einkaufskalkulationslogik |
+| `backend/tests/calculation.test.js` | Neu | Unit-Tests für die Berechnung |
+| `docs/meilenstein-2.md` | Neu | Anleitung für diesen Meilenstein |
+| `docs/glossar.md` | Erweitert | Neue Begriffe (Funktion, Variable, etc.) |
+| `docs/naechste-schritte.md` | Aktualisiert | Vorschau auf Meilenstein 3 |
 
-### Neue Begriffe (→ [Glossar](glossar.md))
+### Neue Konzepte
 
-| Begriff | Kurz erklärt |
-| ------- | ------------ |
-| Endpunkt | Eine URL, an die man Anfragen schicken kann (z.B. `/api/status`) |
-| HTTP | Das Protokoll, über das Browser und Server kommunizieren |
-| Request | Eine Anfrage, die der Browser an den Server schickt |
-| Response | Die Antwort, die der Server zurückschickt |
-| REST-API | Ein Muster, um Daten über HTTP auszutauschen |
-| Router | Verteilt eingehende Anfragen an die richtige Funktion |
-| Statuscode | Eine Zahl, die angibt ob eine Anfrage erfolgreich war (200 = OK, 404 = nicht gefunden, 501 = nicht implementiert) |
+| Konzept | Kurz erklärt |
+|---------|-------------|
+| Funktion | Ein wiederverwendbarer Code-Block mit Namen, Parametern und Rückgabewert |
+| Variable | Ein benannter Speicherplatz für Werte (`const`, `let`) |
+| Modul | Eine Datei, die Funktionen exportiert und von anderen Dateien importiert werden kann |
+| Unit-Test | Ein automatischer Test, der prüft ob eine einzelne Funktion korrekt arbeitet |
 
 ### Wie du startest
 
 1. Öffne das Projekt in VS Code
-2. Öffne ein Terminal (`Strg + Ö`)
-3. Erstelle die Datei `backend/src/routes.js`
-4. Erweitere `backend/src/server.js` um den Router
-5. Starte den Server mit `cd backend && npm start`
-6. Teste die Endpunkte mit `curl` (siehe Schritt 3)
-7. Wenn alles funktioniert: Git-Commit und weiter zur Dokumentation
+2. Erstelle die Datei `backend/src/calculation.js`
+3. Implementiere `roundToTwo` und den Einkaufsteil von `calculateForward`
+4. Erstelle `backend/tests/calculation.test.js` und schreibe Tests
+5. Führe die Tests aus mit `cd backend && npm test`
+6. Wenn alle Tests grün sind: Git-Commit und weiter zur Dokumentation

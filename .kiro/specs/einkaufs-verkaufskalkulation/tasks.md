@@ -17,8 +17,8 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Erstelle `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 0 ✅), Vorschau auf Meilenstein 1 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 9.1, 9.4, 9.5_
 
-- [ ] 2. Meilenstein 1: Backend-Grundgerüst (v1-backend-grundgeruest)
-  - [ ] 2.1 Erstelle den Express-Server mit Test-Endpunkt
+- [x] 2. Meilenstein 1: Backend-Grundgerüst (v1-backend-grundgeruest)
+  - [x] 2.1 Erstelle den Express-Server mit Test-Endpunkt
     - Erstelle `backend/src/server.js` mit Express, cors-Middleware und JSON-Body-Parser
     - Erstelle einen GET-Endpunkt `/api/status` der `{ "status": "ok" }` zurückgibt
     - Erstelle `backend/src/routes.js` mit dem Router-Grundgerüst (POST-Endpunkte für `/api/forward`, `/api/backward`, `/api/difference` die HTTP 501 mit `{ "message": "Noch nicht implementiert" }` zurückgeben)
