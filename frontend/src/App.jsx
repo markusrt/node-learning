@@ -1,8 +1,47 @@
+import { useState } from 'react';
+import './App.css';
+
+// Die drei Kalkulationsarten als Tabs
+const TABS = [
+  { id: 'forward', label: 'Vorwärtskalkulation' },
+  { id: 'backward', label: 'Rückwärtskalkulation' },
+  { id: 'difference', label: 'Differenzkalkulation' },
+];
+
 function App() {
+  // Aktiver Tab — standardmäßig Vorwärtskalkulation
+  const [activeTab, setActiveTab] = useState('forward');
+
   return (
-    <div>
-      <h1>Kalkulationsrechner</h1>
-      <p>Willkommen beim Kalkulationsrechner für die Handelskalkulation.</p>
+    <div className="app">
+      <h1 className="app-title">Kalkulationsrechner</h1>
+      <p className="app-subtitle">Handelskalkulation für die Wirtschaftsschule</p>
+
+      <nav className="tab-navigation" role="tablist" aria-label="Kalkulationsarten">
+        {TABS.map((tab) => (
+          <button
+            key={tab.id}
+            role="tab"
+            aria-selected={activeTab === tab.id}
+            className={`tab-button ${activeTab === tab.id ? 'tab-button--active' : ''}`}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </nav>
+
+      <main className="tab-content" role="tabpanel">
+        {activeTab === 'forward' && (
+          <p className="placeholder">Vorwärtskalkulation — wird in Meilenstein 5 implementiert.</p>
+        )}
+        {activeTab === 'backward' && (
+          <p className="placeholder">Rückwärtskalkulation — wird in Meilenstein 6 implementiert.</p>
+        )}
+        {activeTab === 'difference' && (
+          <p className="placeholder">Differenzkalkulation — wird in Meilenstein 7 implementiert.</p>
+        )}
+      </main>
     </div>
   );
 }
