@@ -4,6 +4,12 @@ Dieses Glossar wird mit jedem Meilenstein erweitert. Neue Begriffe sind mit dem 
 
 ## A
 
+### async/await `Meilenstein 5`
+
+Schlüsselwörter in JavaScript für asynchrone Programmierung. `async` markiert eine Funktion als asynchron, `await` pausiert die Ausführung, bis ein Promise aufgelöst ist. Statt verschachtelter `.then()`-Ketten schreibst du flachen, lesbaren Code: `const data = await fetch('/api/forward')`. `await` darf nur innerhalb einer `async`-Funktion verwendet werden.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Learn/JavaScript/Asynchronous/Promises)
+
 ### Array `Meilenstein 3`
 
 Eine geordnete Liste von Werten in JavaScript. Ein Array wird mit eckigen Klammern erstellt: `const zahlen = [1, 2, 3]`. Jedes Element hat einen Index (Position), der bei 0 beginnt. In unserem Projekt verwenden wir Arrays für das `steps`-Array, das alle Berechnungsschritte enthält.
@@ -66,6 +72,12 @@ Eine bestimmte URL auf dem Server, an die man Anfragen schicken kann. Jeder Endp
 
 → [Mehr erfahren (Express Docs)](https://expressjs.com/de/guide/routing.html)
 
+### Event-Handler (Ereignisbehandler) `Meilenstein 5`
+
+Eine Funktion, die aufgerufen wird, wenn ein bestimmtes Ereignis eintritt — z.B. ein Klick auf einen Button oder das Absenden eines Formulars. In React übergibt man Event-Handler als Props: `<form onSubmit={handleSubmit}>`. Der Event-Handler empfängt ein Event-Objekt mit Informationen über das Ereignis.
+
+→ [Mehr erfahren (React Docs)](https://react.dev/learn/responding-to-events)
+
 ### Express `Meilenstein 0`
 
 Ein Web-Framework für Node.js, das es einfach macht, einen Server zu bauen. Express stellt Funktionen bereit, um auf HTTP-Anfragen zu reagieren und Antworten zu schicken. Es ist das beliebteste Framework für Node.js-Server.
@@ -79,6 +91,12 @@ Ein Web-Framework für Node.js, das es einfach macht, einen Server zu bauen. Exp
 Der Teil einer Webanwendung, den der Benutzer im Browser sieht und mit dem er interagiert — Formulare, Buttons, Tabellen. In unserem Projekt ist das Frontend eine React-App, die mit Vite gebaut wird.
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer)
+
+### fetch `Meilenstein 5`
+
+Eine eingebaute Browser-Funktion, die HTTP-Requests an einen Server sendet. `fetch` gibt ein Promise zurück, das die Antwort des Servers enthält. In unserem Projekt verwenden wir `fetch`, um Kalkulationsdaten an das Backend zu senden: `fetch('/api/forward', { method: 'POST', body: JSON.stringify(input) })`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/API/Fetch_API/Using_Fetch)
 
 ### Funktion (Function) `Meilenstein 2`
 
@@ -170,6 +188,14 @@ Ein Datentyp in JavaScript, der mehrere zusammengehörige Werte unter einem Name
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
+## O — Fortsetzung
+
+### onSubmit `Meilenstein 5`
+
+Ein Event (Ereignis), das ausgelöst wird, wenn ein HTML-Formular abgesendet wird — entweder durch Klick auf den Submit-Button oder durch Drücken der Enter-Taste. In React übergibt man eine Handler-Funktion: `<form onSubmit={handleSubmit}>`. Im Handler ruft man typischerweise `e.preventDefault()` auf, um das Standard-Verhalten (Seite neu laden) zu verhindern.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/API/HTMLFormElement/submit_event)
+
 ## P
 
 ### Parameter `Meilenstein 2`
@@ -183,6 +209,18 @@ Ein Platzhalter in einer Funktionsdefinition, der beim Aufruf der Funktion einen
 Die zentrale Konfigurationsdatei eines Node.js-Projekts. Sie enthält den Projektnamen, die Version, Skripte (z.B. `npm start`) und die Liste aller Abhängigkeiten. Jedes Node.js-Projekt hat eine `package.json`.
 
 → [Mehr erfahren (npm Docs)](https://docs.npmjs.com/cli/v10/configuring-npm/package-json)
+
+### preventDefault `Meilenstein 5`
+
+Eine Methode des Event-Objekts, die das Standard-Verhalten des Browsers verhindert. Beim Absenden eines Formulars würde der Browser normalerweise die Seite neu laden — `e.preventDefault()` verhindert das, damit wir die Daten stattdessen mit `fetch` an das Backend senden können.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/API/Event/preventDefault)
+
+### Promise `Meilenstein 5`
+
+Ein Objekt in JavaScript, das ein zukünftiges Ergebnis repräsentiert. Wenn du `fetch` aufrufst, kommt die Antwort nicht sofort — stattdessen bekommst du ein Promise, das sich später „auflöst" (mit dem Ergebnis) oder „abgelehnt" wird (bei einem Fehler). Mit `await` kannst du auf das Ergebnis warten: `const response = await fetch(...)`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 ### Props (Properties) `Meilenstein 4`
 
