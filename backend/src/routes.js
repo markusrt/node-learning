@@ -1,4 +1,5 @@
 const express = require('express');
+const { calculateForward } = require('./calculation');
 
 const router = express.Router();
 
@@ -7,9 +8,14 @@ router.get('/status', (_req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Vorwärtskalkulation — noch nicht implementiert
-router.post('/forward', (_req, res) => {
-  res.status(501).json({ message: 'Noch nicht implementiert' });
+// Vorwärtskalkulation: Berechnet vom Listeneinkaufspreis zum Listenverkaufspreis
+router.post('/forward', (req, res) => {
+  try {
+    const result = calculateForward(req.body);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ errors: [{ message: 'Ein unerwarteter Fehler ist aufgetreten' }] });
+  }
 });
 
 // Rückwärtskalkulation — noch nicht implementiert
