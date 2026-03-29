@@ -108,11 +108,23 @@ Das Protokoll (die „Sprache"), über das Browser und Server miteinander kommun
 
 ## J
 
+### JSX (JavaScript XML) `Meilenstein 4`
+
+Eine Syntaxerweiterung für JavaScript, die es erlaubt, HTML-ähnlichen Code direkt in JavaScript zu schreiben. Statt HTML und JavaScript getrennt zu halten, schreibst du beides zusammen: `return <h1>Hallo</h1>;`. Der Browser versteht JSX nicht direkt — Vite wandelt es automatisch in normales JavaScript um. JSX-Dateien haben die Endung `.jsx`.
+
+→ [Mehr erfahren (React Docs)](https://react.dev/learn/writing-markup-with-jsx)
+
 ### JSON (JavaScript Object Notation) `Meilenstein 0`
 
 Ein Textformat zum Speichern und Übertragen von Daten. JSON sieht aus wie ein JavaScript-Objekt mit Schlüssel-Wert-Paaren in geschweiften Klammern: `{ "name": "Wert" }`. Es wird verwendet, um Daten zwischen Frontend und Backend auszutauschen.
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/JSON)
+
+### Komponente (Component) `Meilenstein 4`
+
+Ein wiederverwendbarer Baustein der Benutzeroberfläche in React. Eine Komponente ist eine JavaScript-Funktion, die JSX zurückgibt. Jede Komponente kümmert sich um einen bestimmten Teil der Seite — z.B. ein Eingabefeld, eine Tabelle oder die Navigation. Komponenten können ineinander verschachtelt werden, wie Bausteine.
+
+→ [Mehr erfahren (React Docs)](https://react.dev/learn/your-first-component)
 
 ## L
 
@@ -171,6 +183,12 @@ Ein Platzhalter in einer Funktionsdefinition, der beim Aufruf der Funktion einen
 Die zentrale Konfigurationsdatei eines Node.js-Projekts. Sie enthält den Projektnamen, die Version, Skripte (z.B. `npm start`) und die Liste aller Abhängigkeiten. Jedes Node.js-Projekt hat eine `package.json`.
 
 → [Mehr erfahren (npm Docs)](https://docs.npmjs.com/cli/v10/configuring-npm/package-json)
+
+### Props (Properties) `Meilenstein 4`
+
+Daten, die von einer Eltern-Komponente an eine Kind-Komponente übergeben werden. Props sind wie Funktionsparameter für Komponenten. Beispiel: `<InputField label="Preis" value={100} />` übergibt die Props `label` und `value` an die `InputField`-Komponente. Props sind schreibgeschützt — die Kind-Komponente darf sie nicht verändern.
+
+→ [Mehr erfahren (React Docs)](https://react.dev/learn/passing-props-to-a-component)
 
 ### Port `Meilenstein 0`
 
@@ -242,11 +260,23 @@ Das Ergebnis, das eine Funktion mit dem Schlüsselwort `return` zurückgibt. Der
 
 ## S
 
+### Selektor (CSS) `Meilenstein 4`
+
+Ein Muster in CSS, das bestimmt, welche HTML-Elemente gestylt werden sollen. Es gibt verschiedene Arten: `.klasse` wählt Elemente mit einer bestimmten CSS-Klasse, `#id` wählt ein Element mit einer bestimmten ID, und `element` wählt alle Elemente eines Typs (z.B. `h1`). In unserem Projekt verwenden wir hauptsächlich Klassen-Selektoren wie `.tab-button` oder `.result-table`.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/CSS/CSS_selectors)
+
 ### Server `Meilenstein 0`
 
 Ein Programm, das auf Anfragen wartet und Antworten zurückschickt. In unserem Projekt ist der Server ein Node.js-Programm mit Express, das auf Port 3001 läuft und Kalkulationen berechnet.
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server)
+
+### State (Zustand) `Meilenstein 4`
+
+Daten innerhalb einer Komponente, die sich im Laufe der Zeit ändern können. Wenn sich der State ändert, rendert React die Komponente automatisch neu, damit die Anzeige aktuell bleibt. Beispiel: Der aktive Tab in der Navigation ist ein State — wenn der Benutzer auf einen anderen Tab klickt, ändert sich der State und React zeigt den neuen Tab an.
+
+→ [Mehr erfahren (React Docs)](https://react.dev/learn/state-a-components-memory)
 
 ### Statuscode `Meilenstein 1`
 
@@ -275,6 +305,12 @@ Eine Software-Bibliothek, die das Schreiben und Ausführen von Tests vereinfacht
 Ein Test, der eine einzelne Funktion oder ein kleines Code-Stück mit einem konkreten Beispiel prüft. Du gibst bekannte Eingabewerte vor und prüfst, ob das Ergebnis dem erwarteten Wert entspricht. Unit-Tests sind die einfachste Form von Tests und helfen, Fehler früh zu finden.
 
 → [Mehr erfahren (Vitest Docs)](https://vitest.dev/guide/)
+
+### useState `Meilenstein 4`
+
+Ein React-Hook (eine spezielle Funktion), mit dem du State in einer Komponente verwalten kannst. `useState` gibt ein Array mit zwei Elementen zurück: den aktuellen Wert und eine Funktion zum Ändern. Beispiel: `const [count, setCount] = useState(0)` erstellt einen State `count` mit dem Startwert `0` und die Funktion `setCount` zum Ändern.
+
+→ [Mehr erfahren (React Docs)](https://react.dev/reference/react/useState)
 
 ## V
 
