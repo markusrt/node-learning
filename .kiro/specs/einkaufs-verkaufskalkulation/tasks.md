@@ -119,8 +119,8 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Konfiguriere den Vite-Proxy in `frontend/vite.config.js` um `/api` Requests an `localhost:3001` weiterzuleiten
     - _Requirements: 6.1, 10.1, 10.2_
 
-- [ ] 7. Meilenstein 5: Vorwärtskalkulation komplett (v5-vorwaerts-komplett)
-  - [ ] 7.1 Erstelle die Vorwärtskalkulation-Seite
+- [x] 7. Meilenstein 5: Vorwärtskalkulation komplett (v5-vorwaerts-komplett)
+  - [x] 7.1 Erstelle die Vorwärtskalkulation-Seite
     - Erstelle `frontend/src/pages/ForwardPage.jsx` mit Formular (8 Eingabefelder) und Ergebnis-Tabelle
     - Verbinde das Formular mit dem Backend-Endpunkt `/api/forward`
     - Zeige das Ergebnis in der `ResultTable`-Komponente an
@@ -129,7 +129,7 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 5 ✅), Vorschau auf Meilenstein 6 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 1.1, 1.2, 3.1, 3.2, 7.2, 7.3_
 
-  - [ ] 7.2 Verdrahte den Backend-Endpunkt `/api/forward`
+  - [x] 7.2 Verdrahte den Backend-Endpunkt `/api/forward`
     - Implementiere den POST-Handler in `backend/src/routes.js` der `calculateForward` aufruft und das Ergebnis zurückgibt
     - _Requirements: 6.1, 6.4_
 
