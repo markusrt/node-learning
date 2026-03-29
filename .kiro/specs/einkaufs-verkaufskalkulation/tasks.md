@@ -96,11 +96,11 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - **Property 7: JSON-Serialisierung Round-Trip**
     - **Validates: Requirements 10.1, 10.2, 10.3**
 
-- [ ] 5. Checkpoint — Sicherstellen, dass alle Backend-Tests bestehen
+- [x] 5. Checkpoint — Sicherstellen, dass alle Backend-Tests bestehen
   - Alle Tests ausführen, bei Fragen den Benutzer fragen.
 
-- [ ] 6. Meilenstein 4: Frontend-Grundgerüst (v4-frontend-grundgeruest)
-  - [ ] 6.1 Erstelle die React-App mit Navigation
+- [x] 6. Meilenstein 4: Frontend-Grundgerüst (v4-frontend-grundgeruest)
+  - [x] 6.1 Erstelle die React-App mit Navigation
     - Erstelle `frontend/src/App.jsx` mit einer einfachen Tab-Navigation (Vorwärtskalkulation, Rückwärtskalkulation, Differenzkalkulation)
     - Erstelle `frontend/src/App.css` mit einfachem, sauberem Styling
     - Erstelle `docs/meilenstein-4.md` als Anleitung mit: Erklärung was React ist und wie Komponenten funktionieren, Verweis auf das zentrale Glossar mit Liste der neuen Begriffe, Mermaid-Diagramm der Komponentenstruktur (App → Navigation → Seiten → Formular/Tabelle), Abschnitt „Was hat sich im Code geändert?" mit Dateiübersicht und Erklärung der neuen/geänderten Dateien
@@ -108,13 +108,13 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 4 ✅), Vorschau auf Meilenstein 5 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 7.1, 9.6_
 
-  - [ ] 6.2 Erstelle die wiederverwendbaren Komponenten
+  - [x] 6.2 Erstelle die wiederverwendbaren Komponenten
     - Erstelle `frontend/src/components/InputField.jsx` — Eingabefeld mit Label und Fehlermeldung
     - Erstelle `frontend/src/components/ResultTable.jsx` — Tabelle zur Anzeige des `steps`-Arrays mit Euro- und Prozent-Formatierung
     - Erstelle `frontend/src/components/ErrorDisplay.jsx` — Anzeige von Backend-Fehlermeldungen
     - _Requirements: 7.2, 7.4, 7.5_
 
-  - [ ] 6.3 Erstelle die API-Hilfsfunktion
+  - [x] 6.3 Erstelle die API-Hilfsfunktion
     - Erstelle `frontend/src/api.js` mit der `calculate(calculationType, input)` Funktion
     - Konfiguriere den Vite-Proxy in `frontend/vite.config.js` um `/api` Requests an `localhost:3001` weiterzuleiten
     - _Requirements: 6.1, 10.1, 10.2_
