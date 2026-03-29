@@ -195,3 +195,17 @@
   color: #c0392b;
   font-size: 0.85rem;
 }
+
+/* === Seiten-Titel === */
+
+.page-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+  color: #2c3e50;
+}
+
+.page-description {
+  margin: 0 0 1.25rem 0;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}

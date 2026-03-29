@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ForwardPage from './pages/ForwardPage.jsx';
 import './App.css';
 
 // Die drei Kalkulationsarten als Tabs
@@ -32,9 +33,7 @@ function App() {
       </nav>
 
       <main className="tab-content" role="tabpanel">
-        {activeTab === 'forward' && (
-          <p className="placeholder">Vorwärtskalkulation — wird in Meilenstein 5 implementiert.</p>
-        )}
+        {activeTab === 'forward' && <ForwardPage />}
         {activeTab === 'backward' && (
           <p className="placeholder">Rückwärtskalkulation — wird in Meilenstein 6 implementiert.</p>
         )}
