@@ -30,6 +30,12 @@ Eine Aussage in einem Test, die wahr sein muss, damit der Test besteht. Beispiel
 
 ## B
 
+### Bedingung/if-else `Meilenstein 8`
+
+Eine Kontrollstruktur in JavaScript, mit der du Entscheidungen im Code triffst. `if` prüft eine Bedingung — ist sie wahr, wird der Code-Block ausgeführt. Mit `else` kannst du einen alternativen Block definieren, der ausgeführt wird, wenn die Bedingung falsch ist. Beispiel: `if (value < 0) { /* Fehler */ } else { /* OK */ }`. Validierung besteht im Kern aus vielen if-else-Prüfungen.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/if...else)
+
 ### Backend `Meilenstein 0`
 
 Der Teil einer Webanwendung, der auf dem Server läuft und für den Benutzer unsichtbar ist. Das Backend verarbeitet Daten, führt Berechnungen durch und schickt Ergebnisse an das Frontend. In unserem Projekt ist das Backend ein Node.js-Server mit Express.
@@ -92,6 +98,12 @@ Der Teil einer Webanwendung, den der Benutzer im Browser sieht und mit dem er in
 
 → [Mehr erfahren (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer)
 
+### Fehlerbehandlung (Error Handling) `Meilenstein 8`
+
+Der Umgang mit Fehlern im Code. Statt das Programm abstürzen zu lassen, fängt man Fehler ab und reagiert sinnvoll darauf — z.B. mit einer verständlichen Fehlermeldung für den Benutzer. In JavaScript verwendet man dafür `try/catch` und im Backend HTTP-Statuscodes (400 für ungültige Eingaben, 500 für Serverfehler). Gute Fehlerbehandlung macht Software robuster und benutzerfreundlicher.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#exception_handling_statements)
+
 ### fetch `Meilenstein 5`
 
 Eine eingebaute Browser-Funktion, die HTTP-Requests an einen Server sendet. `fetch` gibt ein Promise zurück, das die Antwort des Servers enthält. In unserem Projekt verwenden wir `fetch`, um Kalkulationsdaten an das Backend zu senden: `fetch('/api/forward', { method: 'POST', body: JSON.stringify(input) })`.
@@ -113,6 +125,12 @@ Ein Versionsverwaltungssystem. Es speichert die Geschichte deines Codes, sodass 
 → [Mehr erfahren (git-scm.com)](https://git-scm.com/book/de/v2/Erste-Schritte-Was-ist-Versionsverwaltung%3F)
 
 ## H
+
+### HTTP-Statuscode 400/500 `Meilenstein 8`
+
+Spezielle HTTP-Statuscodes für Fehlerfälle. **400 (Bad Request)** bedeutet: Der Client (Browser/Frontend) hat ungültige Daten gesendet — z.B. ein leeres Pflichtfeld oder einen negativen Betrag. Der Fehler liegt beim Benutzer. **500 (Internal Server Error)** bedeutet: Im Server ist ein unerwarteter Fehler aufgetreten — z.B. ein Programmierfehler. Der Fehler liegt beim Server. Die Unterscheidung ist wichtig, damit das Frontend dem Benutzer die richtige Meldung zeigen kann.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/HTTP/Status)
 
 ### Hundert-im-Hundert-Rechnung `Meilenstein 3`
 
@@ -324,6 +342,12 @@ Eine dreistellige Zahl in der HTTP-Response, die angibt, ob eine Anfrage erfolgr
 
 ## T
 
+### try/catch `Meilenstein 8`
+
+Eine Kontrollstruktur in JavaScript zum Abfangen von Fehlern. Code im `try`-Block wird normal ausgeführt. Wenn ein Fehler auftritt, springt die Ausführung sofort in den `catch`-Block, wo du auf den Fehler reagieren kannst. Beispiel: `try { berechne(); } catch (err) { zeigeFehler(err); }`. Ohne try/catch würde ein Fehler das ganze Programm zum Absturz bringen.
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/try...catch)
+
 ### Terminal / Kommandozeile `Meilenstein 0`
 
 Ein Textfenster, in dem du Befehle eingeben kannst, um Programme zu starten, Dateien zu verwalten oder Code auszuführen. Statt mit der Maus zu klicken, tippst du Befehle ein. In VS Code erreichst du es über `Strg + Ö`.
@@ -351,6 +375,12 @@ Ein React-Hook (eine spezielle Funktion), mit dem du State in einer Komponente v
 → [Mehr erfahren (React Docs)](https://react.dev/reference/react/useState)
 
 ## V
+
+### Validierung (Validation) `Meilenstein 8`
+
+Das Prüfen von Eingabedaten, bevor sie verarbeitet werden. Validierung stellt sicher, dass nur gültige Daten in die Berechnung gelangen — z.B. keine leeren Felder, keine negativen Beträge, keine Buchstaben statt Zahlen. In einer Webanwendung findet die Validierung immer im Backend statt (als „Single Source of Truth"), optional zusätzlich im Frontend (für schnelleres Feedback).
+
+→ [Mehr erfahren (MDN)](https://developer.mozilla.org/de/docs/Learn/Forms/Form_validation)
 
 ### Variable `Meilenstein 2`
 
