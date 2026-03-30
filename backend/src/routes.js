@@ -1,5 +1,5 @@
 const express = require('express');
-const { calculateForward } = require('./calculation');
+const { calculateForward, calculateBackward } = require('./calculation');
 
 const router = express.Router();
 
@@ -18,9 +18,14 @@ router.post('/forward', (req, res) => {
   }
 });
 
-// Rückwärtskalkulation — noch nicht implementiert
-router.post('/backward', (_req, res) => {
-  res.status(501).json({ message: 'Noch nicht implementiert' });
+// Rückwärtskalkulation: Berechnet vom Listenverkaufspreis zum Listeneinkaufspreis
+router.post('/backward', (req, res) => {
+  try {
+    const result = calculateBackward(req.body);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ errors: [{ message: 'Ein unerwarteter Fehler ist aufgetreten' }] });
+  }
 });
 
 // Differenzkalkulation — noch nicht implementiert
