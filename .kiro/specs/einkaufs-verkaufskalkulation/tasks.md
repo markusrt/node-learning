@@ -133,14 +133,14 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Implementiere den POST-Handler in `backend/src/routes.js` der `calculateForward` aufruft und das Ergebnis zurückgibt
     - _Requirements: 6.1, 6.4_
 
-- [ ] 8. Meilenstein 6: Rückwärtskalkulation komplett (v6-rueckwaerts)
-  - [ ] 8.1 Erstelle die Rückwärtskalkulation-Seite
+- [x] 8. Meilenstein 6: Rückwärtskalkulation komplett (v6-rueckwaerts)
+  - [x] 8.1 Erstelle die Rückwärtskalkulation-Seite
     - Erstelle `frontend/src/pages/BackwardPage.jsx` mit Formular und Ergebnis-Tabelle
     - Verbinde mit Backend-Endpunkt `/api/backward`
     - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 6 ✅), Vorschau auf Meilenstein 7 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 4.1, 4.2, 7.2, 7.3_
 
-  - [ ] 8.2 Verdrahte den Backend-Endpunkt `/api/backward`
+  - [x] 8.2 Verdrahte den Backend-Endpunkt `/api/backward`
     - Implementiere den POST-Handler in `backend/src/routes.js`
     - _Requirements: 6.1, 6.4_
 
