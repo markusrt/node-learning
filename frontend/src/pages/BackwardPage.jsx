@@ -16,24 +16,52 @@ const INITIAL_VALUES = {
   supplierDiscount: '',
 };
 
+// Hilfsfunktion: Prüft ob alle Felder ausgefüllt sind
+function allFieldsFilled(values) {
+  return Object.values(values).every((v) => v !== '');
+}
+
+// Hilfsfunktion: Baut ein Objekt mit Feld-Fehlermeldungen aus dem Backend-Fehler-Array
+function buildFieldErrors(errors) {
+  const fieldErrors = {};
+  for (const err of errors) {
+    if (err.field) {
+      fieldErrors[err.field] = err.message;
+    }
+  }
+  return fieldErrors;
+}
+
 // Rückwärtskalkulation-Seite mit Formular und Ergebnis-Tabelle
 function BackwardPage() {
   const [values, setValues] = useState(INITIAL_VALUES);
   const [result, setResult] = useState(null);
   const [errors, setErrors] = useState([]);
+  const [fieldErrors, setFieldErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   // Aktualisiert ein einzelnes Eingabefeld
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues((prev) => ({ ...prev, [name]: value }));
+    if (fieldErrors[name]) {
+      setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   // Sendet die Eingaben an das Backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
+    setFieldErrors({});
     setResult(null);
+
+    // Minimale Frontend-Prüfung: Sind alle Felder ausgefüllt?
+    if (!allFieldsFilled(values)) {
+      setErrors([{ message: 'Bitte fülle alle Felder aus.' }]);
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -46,9 +74,12 @@ function BackwardPage() {
       const data = await calculate('backward', input);
       setResult(data);
     } catch (err) {
-      // Fehlermeldungen vom Backend anzeigen
       if (err.errors && err.errors.length > 0) {
-        setErrors(err.errors);
+        setFieldErrors(buildFieldErrors(err.errors));
+        const generalErrors = err.errors.filter((e) => !e.field);
+        if (generalErrors.length > 0) {
+          setErrors(generalErrors);
+        }
       } else {
         setErrors([{ message: err.message || 'Verbindung zum Server fehlgeschlagen. Bitte prüfe, ob der Server läuft.' }]);
       }
@@ -68,62 +99,14 @@ function BackwardPage() {
 
       <form onSubmit={handleSubmit}>
         <div className="form-grid">
-          <InputField
-            label="Listenverkaufspreis"
-            name="listSellingPrice"
-            value={values.listSellingPrice}
-            onChange={handleChange}
-            suffix="€"
-          />
-          <InputField
-            label="Kundenrabatt"
-            name="customerDiscount"
-            value={values.customerDiscount}
-            onChange={handleChange}
-            suffix="%"
-          />
-          <InputField
-            label="Kundenskonto"
-            name="customerCashDiscount"
-            value={values.customerCashDiscount}
-            onChange={handleChange}
-            suffix="%"
-          />
-          <InputField
-            label="Gewinnzuschlag"
-            name="profitSurcharge"
-            value={values.profitSurcharge}
-            onChange={handleChange}
-            suffix="%"
-          />
-          <InputField
-            label="Handlungskostenzuschlag"
-            name="overheadSurcharge"
-            value={values.overheadSurcharge}
-            onChange={handleChange}
-            suffix="%"
-          />
-          <InputField
-            label="Bezugskosten"
-            name="procurementCosts"
-            value={values.procurementCosts}
-            onChange={handleChange}
-            suffix="€"
-          />
-          <InputField
-            label="Liefererskonto"
-            name="supplierCashDiscount"
-            value={values.supplierCashDiscount}
-            onChange={handleChange}
-            suffix="%"
-          />
-          <InputField
-            label="Liefererrabatt"
-            name="supplierDiscount"
-            value={values.supplierDiscount}
-            onChange={handleChange}
-            suffix="%"
-          />
+          <InputField label="Listenverkaufspreis" name="listSellingPrice" value={values.listSellingPrice} onChange={handleChange} error={fieldErrors.listSellingPrice} suffix="€" />
+          <InputField label="Kundenrabatt" name="customerDiscount" value={values.customerDiscount} onChange={handleChange} error={fieldErrors.customerDiscount} suffix="%" />
+          <InputField label="Kundenskonto" name="customerCashDiscount" value={values.customerCashDiscount} onChange={handleChange} error={fieldErrors.customerCashDiscount} suffix="%" />
+          <InputField label="Gewinnzuschlag" name="profitSurcharge" value={values.profitSurcharge} onChange={handleChange} error={fieldErrors.profitSurcharge} suffix="%" />
+          <InputField label="Handlungskostenzuschlag" name="overheadSurcharge" value={values.overheadSurcharge} onChange={handleChange} error={fieldErrors.overheadSurcharge} suffix="%" />
+          <InputField label="Bezugskosten" name="procurementCosts" value={values.procurementCosts} onChange={handleChange} error={fieldErrors.procurementCosts} suffix="€" />
+          <InputField label="Liefererskonto" name="supplierCashDiscount" value={values.supplierCashDiscount} onChange={handleChange} error={fieldErrors.supplierCashDiscount} suffix="%" />
+          <InputField label="Liefererrabatt" name="supplierDiscount" value={values.supplierDiscount} onChange={handleChange} error={fieldErrors.supplierDiscount} suffix="%" />
         </div>
 
         <div className="form-actions">
