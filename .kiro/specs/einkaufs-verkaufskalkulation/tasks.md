@@ -144,14 +144,14 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Implementiere den POST-Handler in `backend/src/routes.js`
     - _Requirements: 6.1, 6.4_
 
-- [ ] 9. Meilenstein 7: Differenzkalkulation komplett (v7-differenz)
-  - [ ] 9.1 Erstelle die Differenzkalkulation-Seite
+- [x] 9. Meilenstein 7: Differenzkalkulation komplett (v7-differenz)
+  - [x] 9.1 Erstelle die Differenzkalkulation-Seite
     - Erstelle `frontend/src/pages/DifferencePage.jsx` mit Formular und Ergebnis-Tabelle
     - Verbinde mit Backend-Endpunkt `/api/difference`
     - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 7 ✅), Vorschau auf Meilenstein 8 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 5.1, 5.2, 7.2, 7.3_
 
-  - [ ] 9.2 Verdrahte den Backend-Endpunkt `/api/difference`
+  - [x] 9.2 Verdrahte den Backend-Endpunkt `/api/difference`
     - Implementiere den POST-Handler in `backend/src/routes.js`
     - _Requirements: 6.1, 6.4_
 
