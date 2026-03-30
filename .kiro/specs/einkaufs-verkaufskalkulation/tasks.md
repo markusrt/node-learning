@@ -155,11 +155,11 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Implementiere den POST-Handler in `backend/src/routes.js`
     - _Requirements: 6.1, 6.4_
 
-- [ ] 10. Checkpoint — Sicherstellen, dass alle drei Kalkulationsarten funktionieren
+- [x] 10. Checkpoint — Sicherstellen, dass alle drei Kalkulationsarten funktionieren
   - Alle Tests ausführen, bei Fragen den Benutzer fragen.
 
-- [ ] 11. Meilenstein 8: Eingabevalidierung (v8-validierung)
-  - [ ] 11.1 Implementiere die Backend-Validierung
+- [x] 11. Meilenstein 8: Eingabevalidierung (v8-validierung)
+  - [x] 11.1 Implementiere die Backend-Validierung
     - Erstelle `backend/src/validation.js` mit `validateInput(data, fields)` Funktion
     - Implementiere Regeln: Pflichtfelder, numerische Werte, keine negativen Beträge, Prozentwerte 0–100
     - Integriere die Validierung in alle drei Route-Handler (vor der Berechnung aufrufen, bei Fehler HTTP 400 zurückgeben)
@@ -168,19 +168,19 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Aktualisiere `docs/naechste-schritte.md` mit: aktuellem Stand (Meilenstein 8 ✅), Vorschau auf Meilenstein 9 (welche Dateien, welche Konzepte, wie man startet)
     - _Requirements: 1.3, 1.4, 6.3, 8.1, 8.2, 8.3, 8.4_
 
-  - [ ] 11.2 Schreibe Unit-Tests für die Validierung
+  - [x] 11.2 Schreibe Unit-Tests für die Validierung
     - Teste: leeres Feld, nicht-numerischer Wert, negativer Wert, Prozentwert > 100
     - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-  - [ ] 11.3 Schreibe Property-Test: Validierung lehnt ungültige Eingaben ab
+  - [x] 11.3 Schreibe Property-Test: Validierung lehnt ungültige Eingaben ab
     - **Property 5: Validierung lehnt ungültige Eingaben ab**
     - **Validates: Requirements 1.3, 6.3, 8.1, 8.2, 8.3**
 
-  - [ ] 11.4 Schreibe Property-Test: Prozentwerte nur 0–100
+  - [x] 11.4 Schreibe Property-Test: Prozentwerte nur 0–100
     - **Property 6: Prozentwerte nur im Bereich 0–100**
     - **Validates: Requirements 1.4, 8.4**
 
-  - [ ] 11.5 Implementiere minimale Frontend-Validierung
+  - [x] 11.5 Implementiere minimale Frontend-Validierung
     - Füge in jeder Seiten-Komponente eine einfache Prüfung hinzu: Sind alle Felder ausgefüllt?
     - Zeige Backend-Fehlermeldungen neben den betroffenen Feldern an (über `ErrorDisplay` oder direkt in `InputField`)
     - _Requirements: 8.1, 7.3_
