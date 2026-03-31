@@ -185,19 +185,19 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Zeige Backend-Fehlermeldungen neben den betroffenen Feldern an (über `ErrorDisplay` oder direkt in `InputField`)
     - _Requirements: 8.1, 7.3_
 
-- [ ] 12. Meilenstein 9: Feinschliff und Styling (v9-fertig)
-  - [ ] 12.1 Verbessere das CSS-Styling
+- [x] 12. Meilenstein 9: Feinschliff und Styling (v9-fertig)
+  - [x] 12.1 Verbessere das CSS-Styling
     - Gestalte die Formulare übersichtlich und schülerfreundlich
     - Stelle sicher, dass die Ergebnis-Tabelle gut lesbar ist
     - Füge Farben für Zwischenergebnisse hinzu (z.B. Grün für Endwerte)
     - _Requirements: 7.1, 7.2_
 
-  - [ ] 12.2 Schreibe Property-Test: Formatierung von Beträgen und Prozenten
+  - [x] 12.2 Schreibe Property-Test: Formatierung von Beträgen und Prozenten
     - **Property 9: Formatierung von Beträgen und Prozenten**
     - Erstelle eine Hilfsfunktion `formatCurrency(value)` und `formatPercent(value)` und teste sie
     - **Validates: Requirements 7.4, 7.5**
 
-  - [ ] 12.3 Erstelle die finale README und Projektdokumentation
+  - [x] 12.3 Erstelle die finale README und Projektdokumentation
     - Aktualisiere `README.md` mit vollständiger Projektbeschreibung
     - Liste alle Meilensteine und Git-Tags auf
     - Beschreibe wie man das Projekt startet und testet
