@@ -34,8 +34,8 @@ Eine Webanwendung für Schüler der 9. Klasse (Wirtschaftsschule), die die Hande
 ### 1. Repository klonen
 
 ```bash
-git clone <repository-url>
-cd kalkulationsrechner
+git clone https://github.com/markusrt/node-learning.git
+cd node-learning
 ```
 
 ### 2. Backend installieren und starten
@@ -119,16 +119,16 @@ Das Projekt wurde schrittweise aufgebaut. Jeder Meilenstein ist als Git-Tag gesp
 
 | Tag | Meilenstein | Beschreibung |
 |-----|-------------|-------------|
-| `v0-projektstart` | 0 | Projektstruktur aufgesetzt |
-| `v1-backend-grundgeruest` | 1 | Express-Server mit Test-Endpunkt |
-| `v2-einkaufskalkulation` | 2 | Einkaufskalkulation im Backend + Tests |
-| `v3-verkaufskalkulation` | 3 | Verkaufs-, Rückwärts- und Differenzkalkulation + Property-Tests |
-| `v4-frontend-grundgeruest` | 4 | React-App mit Navigation und Komponenten |
-| `v5-vorwaerts-komplett` | 5 | Vorwärtskalkulation Frontend + Backend verbunden |
-| `v6-rueckwaerts` | 6 | Rückwärtskalkulation komplett |
-| `v7-differenz` | 7 | Differenzkalkulation komplett |
-| `v8-validierung` | 8 | Eingabevalidierung Frontend + Backend |
-| `v9-fertig` | 9 | Feinschliff, Styling, finale Version |
+| [`v0-projektstart`](https://github.com/markusrt/node-learning/tree/v0-projektstart) | 0 | Projektstruktur aufgesetzt |
+| [`v1-backend-grundgeruest`](https://github.com/markusrt/node-learning/tree/v1-backend-grundgeruest) | 1 | Express-Server mit Test-Endpunkt |
+| [`v2-einkaufskalkulation`](https://github.com/markusrt/node-learning/tree/v2-einkaufskalkulation) | 2 | Einkaufskalkulation im Backend + Tests |
+| [`v3-verkaufskalkulation`](https://github.com/markusrt/node-learning/tree/v3-verkaufskalkulation) | 3 | Verkaufs-, Rückwärts- und Differenzkalkulation + Property-Tests |
+| [`v4-frontend-grundgeruest`](https://github.com/markusrt/node-learning/tree/v4-frontend-grundgeruest) | 4 | React-App mit Navigation und Komponenten |
+| [`v5-vorwaerts-komplett`](https://github.com/markusrt/node-learning/tree/v5-vorwaerts-komplett) | 5 | Vorwärtskalkulation Frontend + Backend verbunden |
+| [`v6-rueckwaerts`](https://github.com/markusrt/node-learning/tree/v6-rueckwaerts) | 6 | Rückwärtskalkulation komplett |
+| [`v7-differenz`](https://github.com/markusrt/node-learning/tree/v7-differenz) | 7 | Differenzkalkulation komplett |
+| [`v8-validierung`](https://github.com/markusrt/node-learning/tree/v8-validierung) | 8 | Eingabevalidierung Frontend + Backend |
+| [`v9-fertig`](https://github.com/markusrt/node-learning/tree/v9-fertig) | 9 | Feinschliff, Styling, finale Version |
 
 Jeder Meilenstein hat eine eigene Anleitung im `docs/`-Ordner.
 
