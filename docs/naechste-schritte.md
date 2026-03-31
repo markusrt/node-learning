@@ -1,53 +1,30 @@
 # Nächste Schritte
 
-Diese Datei zeigt dir, wo du gerade stehst und was als Nächstes kommt. Nach jedem Meilenstein wird sie aktualisiert.
+Diese Datei zeigt dir, wo du gerade stehst und was als Nächstes kommt.
 
-## Aktueller Stand: Meilenstein 8 — Eingabevalidierung ✅
+## Aktueller Stand: Projekt ist fertig ✅
 
-Du hast die Eingabevalidierung im Backend und eine minimale Prüfung im Frontend implementiert:
+Alle 9 Meilensteine sind abgeschlossen. Der Kalkulationsrechner ist vollständig funktionsfähig:
 
-- `backend/src/validation.js` mit `validateInput(data, fields)` — prüft Pflichtfelder, numerische Werte, negative Beträge und Prozentwerte 0–100
-- Alle drei Route-Handler in `routes.js` rufen die Validierung auf, bevor die Berechnung startet
-- Bei ungültigen Eingaben gibt das Backend HTTP 400 mit verständlichen Fehlermeldungen zurück
-- Die Frontend-Seiten prüfen, ob alle Felder ausgefüllt sind, und zeigen Backend-Fehler neben den betroffenen Feldern an
-- Unit-Tests und Property-Tests stellen sicher, dass die Validierung korrekt funktioniert
+- **Meilenstein 0**: Projektstruktur aufgesetzt
+- **Meilenstein 1**: Express-Server mit Test-Endpunkt
+- **Meilenstein 2**: Einkaufskalkulation im Backend + Tests
+- **Meilenstein 3**: Verkaufs-, Rückwärts- und Differenzkalkulation + Property-Tests
+- **Meilenstein 4**: React-App mit Navigation und Komponenten
+- **Meilenstein 5**: Vorwärtskalkulation Frontend + Backend verbunden
+- **Meilenstein 6**: Rückwärtskalkulation komplett
+- **Meilenstein 7**: Differenzkalkulation komplett
+- **Meilenstein 8**: Eingabevalidierung Frontend + Backend
+- **Meilenstein 9**: Feinschliff, Styling, finale Version
 
-## Nächster Schritt: Meilenstein 9 — Feinschliff und Styling
+## Ideen für Erweiterungen
 
-### Ziel
+Falls du weitermachen möchtest, hier ein paar Ideen:
 
-Du verbesserst das Aussehen der Anwendung und erstellst die finale Dokumentation. Das Projekt wird fertiggestellt.
-
-### Was du tun musst
-
-#### Schritt 1: CSS-Styling verbessern
-
-Gestalte die Formulare übersichtlich und schülerfreundlich. Stelle sicher, dass die Ergebnis-Tabelle gut lesbar ist. Füge Farben für Zwischenergebnisse hinzu (z.B. Grün für Endwerte).
-
-#### Schritt 2: Formatierungs-Property-Test
-
-Erstelle Hilfsfunktionen `formatCurrency(value)` und `formatPercent(value)` und schreibe Property-Tests dafür.
-
-#### Schritt 3: Finale README und Dokumentation
-
-Aktualisiere die README mit vollständiger Projektbeschreibung, liste alle Meilensteine und Git-Tags auf, und beschreibe wie man das Projekt startet und testet.
-
-### Welche Dateien werden verändert?
-
-| Datei | Status | Beschreibung |
-| --- | --- | --- |
-| `frontend/src/App.css` | Erweitert | Verbessertes Styling |
-| `README.md` | Erweitert | Vollständige Projektbeschreibung |
-| `docs/naechste-schritte.md` | Aktualisiert | Projekt ist fertig |
-
-### Neue Konzepte
-
-- CSS-Styling und Farbgestaltung
-- Formatierungsfunktionen für Beträge und Prozente
-
-### Wie du startest
-
-1. Verbessere das CSS in `frontend/src/App.css`
-2. Erstelle Formatierungsfunktionen und Property-Tests
-3. Aktualisiere die README und Dokumentation
-4. Führe alle Tests aus und stelle sicher, dass alles funktioniert
+- **Druckansicht**: Eine CSS-Druckansicht, damit Schüler ihre Kalkulation ausdrucken können
+- **Beispielwerte**: Ein Button "Beispiel laden", der ein Schulbuch-Beispiel in die Felder einträgt
+- **Mehrere Berechnungen**: Ergebnisse speichern und vergleichen (z.B. mit localStorage)
+- **Dunkelmodus**: Ein Toggle für helles/dunkles Design (CSS-Variablen kennenlernen)
+- **TypeScript**: Das Projekt auf TypeScript umstellen, um Typsicherheit zu lernen
+- **Datenbank**: Berechnungen in einer SQLite-Datenbank speichern
+- **Benutzerkonten**: Login-System mit Passwort-Hashing (Sicherheit lernen)

@@ -204,7 +204,7 @@ Schrittweiser Aufbau eines Lernprojekts für die Handelskalkulation. Jeder Meile
     - Aktualisiere `docs/naechste-schritte.md` mit: Projekt ist fertig ✅, Ideen für Erweiterungen
     - _Requirements: 9.1, 9.4, 9.5, 9.6_
 
-- [ ] 13. Finaler Checkpoint — Alle Tests bestehen, Projekt ist vollständig
+- [x] 13. Finaler Checkpoint — Alle Tests bestehen, Projekt ist vollständig
   - Alle Tests ausführen, bei Fragen den Benutzer fragen.
 
 ## Hinweise
