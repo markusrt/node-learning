@@ -82,20 +82,23 @@
   border-radius: 6px;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 .btn--primary {
   background-color: #3498db;
   color: #fff;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
 }
 
 .btn--primary:hover {
   background-color: #2980b9;
+  box-shadow: 0 2px 6px rgba(52, 152, 219, 0.4);
 }
 
 .btn--primary:disabled {
   background-color: #bdc3c7;
+  box-shadow: none;
   cursor: not-allowed;
 }
 
@@ -118,17 +121,20 @@
   border: 1px solid #dcdde1;
   border-radius: 4px;
   font-size: 0.95rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fafbfc;
 }
 
 .input-field__input:focus {
   outline: none;
   border-color: #3498db;
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  background-color: #fff;
 }
 
 .input-field__input--error {
   border-color: #e74c3c;
+  background-color: #fdf0ef;
 }
 
 .input-field__error {
@@ -142,24 +148,37 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .result-table th,
 .result-table td {
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.75rem;
   text-align: left;
   border-bottom: 1px solid #ecf0f1;
 }
 
 .result-table th {
-  background-color: #f8f9fa;
+  background-color: #2c3e50;
   font-weight: 600;
-  color: #2c3e50;
+  color: #fff;
   font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .result-table td {
   font-size: 0.95rem;
+}
+
+.result-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.result-table tbody tr:hover {
+  background-color: #eef5fb;
 }
 
 .result-table__value {
@@ -167,9 +186,30 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Ergebniszeilen (Labels die mit "=" beginnen) — grün hervorgehoben */
 .result-table__row--result td {
   font-weight: 600;
-  color: #27ae60;
+  color: #1a7a42;
+  background-color: #e8f8ef;
+}
+
+/* Endwerte (letzter Ergebnis-Schritt) — stärker hervorgehoben */
+.result-table__row--final td {
+  font-weight: 700;
+  color: #fff;
+  background-color: #27ae60;
+}
+
+/* Trennzeile zwischen Einkaufs- und Verkaufsseite */
+.result-table__row--separator td {
+  padding: 0;
+  border-bottom: none;
+}
+
+.result-table__row--separator hr {
+  border: none;
+  border-top: 2px dashed #bdc3c7;
+  margin: 0;
 }
 
 /* === Fehleranzeige === */
@@ -208,4 +248,23 @@
   margin: 0 0 1.25rem 0;
   color: #7f8c8d;
   font-size: 0.9rem;
+}
+
+/* === Responsive: Auf kleinen Bildschirmen einspaltiges Layout === */
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-navigation {
+    flex-wrap: wrap;
+  }
+
+  .tab-button {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.5rem;
+  }
 }
